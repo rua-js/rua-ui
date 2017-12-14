@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# ide
+.idea
+
+# node_modules
+node_modules

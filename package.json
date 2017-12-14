@@ -1,0 +1,29 @@
+{
+  "name": "rua-event",
+  "version": "0.0.0",
+  "description": "Event Emitter for Rua.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rua-js/rua-event.git"
+  },
+  "keywords": [
+    "rua",
+    "rua.js",
+    "rua-event",
+    "event"
+  ],
+  "author": "copydog",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rua-js/rua-event/issues"
+  },
+  "homepage": "https://github.com/rua-js/rua-event#readme",
+  "dependencies": {
+    "rua-core": "^0.1.4",
+    "wolfy87-eventemitter": "^5.2.4"
+  }
+}
