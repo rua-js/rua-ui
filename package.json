@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/rua-js/rua-event#readme",
   "dependencies": {
-    "rua-core": "^0.1.4",
+    "rua-core": "^0.1.8",
     "wolfy87-eventemitter": "^5.2.4"
   }
 }
