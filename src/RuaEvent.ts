@@ -1,5 +1,7 @@
 import { AbstractRuaPackage } from 'rua-core/lib/Abstractions'
-import EventEmitter from 'wolfy87-eventemitter'
+import * as EventEmitter from 'wolfy87-eventemitter'
+import * as _ from 'lodash'
+import { MultiEvents } from './Types'
 
 export default class RuaEvent extends AbstractRuaPackage {
 
@@ -10,27 +12,28 @@ export default class RuaEvent extends AbstractRuaPackage {
     this.saveStore(new EventEmitter())
   }
 
-  public on(evt: string, callback: Function): Function {
+  public on(evt: string, callback: Function): RuaEvent {
     this.store.on(evt, callback)
-    return () => {
-      this.removeOne(evt, callback)
-    }
+    return this
   }
 
-  public once(evt: string, callback: Function): Function {
+  public once(evt: string, callback: Function): RuaEvent {
     this.store.once(evt, callback)
-    return () => {
-      this.removeOne(evt, callback)
-    }
+    return this
   }
 
-  public emit(evt: string | RegExp, ...args: any[]): RuaEvent {
+  public emit(evt: string | RegExp | any, ...args: any[]): RuaEvent {
     this.store.emit(evt, args)
     return this
   }
 
-  public removeOne(evt: string | RegExp, callback: Function): RuaEvent {
+  public removeOne(evt: string | RegExp | any, callback: Function): RuaEvent {
     this.store.removeListener(evt, callback)
+    return this
+  }
+
+  private load(evts: MultiEvents): RuaEvent {
+    this.store.addListeners(evts)
     return this
   }
 
