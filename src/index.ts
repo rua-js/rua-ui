@@ -7,7 +7,7 @@ import RuaEvent from './RuaEvent'
 // Rua Core Dependency
 import { packager } from 'rua-core/lib'
 
-const eventInstance: RuaEvent = (() => {
+const eventInstance = (() => {
   if (packager.hasPackage('rua-event')) {
     return packager.getPackage('rua-event')
   }

@@ -1,7 +1,7 @@
 import { AbstractRuaPackage } from 'rua-core/lib/Abstractions'
 import EventEmitter from 'wolfy87-eventemitter'
 
-class RuaEvent extends AbstractRuaPackage {
+export default class RuaEvent extends AbstractRuaPackage {
 
   public store: EventEmitter
 
