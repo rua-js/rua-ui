@@ -1,7 +1,7 @@
 {
   "name": "rua-event",
-  "version": "0.0.0",
-  "description": "Event Emitter for Rua.js",
+  "version": "0.0.1",
+  "description": "An elegant way to handle events",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

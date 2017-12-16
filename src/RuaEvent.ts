@@ -1,31 +1,38 @@
 import { AbstractRuaPackage } from 'rua-core/lib/Abstractions'
-import emitter from 'wolfy87-eventemitter'
+import EventEmitter from 'wolfy87-eventemitter'
 
 class RuaEvent extends AbstractRuaPackage {
-  /**
-   * Original EventEmitter
-   *
-   * @type {EventEmitter}
-   */
-  public emitter = emitter
+
+  public store: EventEmitter
 
   constructor() {
     super()
+    this.saveStore(new EventEmitter())
   }
 
-  public fire(event: string): void {
-
+  public on(evt: string, callback: Function): Function {
+    this.store.on(evt, callback)
+    return () => {
+      this.removeOne(evt, callback)
+    }
   }
 
-  public on(event: string, callback: any): void {
-
+  public once(evt: string, callback: Function): Function {
+    this.store.once(evt, callback)
+    return () => {
+      this.removeOne(evt, callback)
+    }
   }
 
-  public once(event: string, callback: any): void {
-
+  public emit(evt: string | RegExp, ...args: any[]): RuaEvent {
+    this.store.emit(evt, args)
+    return this
   }
 
-  public removeAll(event?: string): boolean {
-    return true
+  public removeOne(evt: string | RegExp, callback: Function): RuaEvent {
+    this.store.removeListener(evt, callback)
+    return this
   }
+
+  // todo: need full implementation of event emitter
 }

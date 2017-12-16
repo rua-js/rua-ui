@@ -1,0 +1,1 @@
+type Canceler = Function
