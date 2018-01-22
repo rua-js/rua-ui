@@ -108,6 +108,4 @@ export default class RuaEvent extends AbstractRuaPackage {
     this.store.addListeners(events)
     return this
   }
-
-  // todo: need full implementation of event emitter
 }
