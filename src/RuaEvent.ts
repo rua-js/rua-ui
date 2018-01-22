@@ -1,6 +1,6 @@
 import { AbstractRuaPackage } from 'rua-core/lib/Abstractions'
+// @ts-ignore: import problem
 import * as EventEmitter from 'wolfy87-eventemitter'
-import * as _ from 'lodash'
 import { MultiEvents } from './Types'
 
 export default class RuaEvent extends AbstractRuaPackage {
@@ -10,6 +10,7 @@ export default class RuaEvent extends AbstractRuaPackage {
   constructor() {
     super()
     this.saveStore(new EventEmitter())
+    this.booted = true
   }
 
   public on(evt: string, callback: Function): RuaEvent {
@@ -32,7 +33,7 @@ export default class RuaEvent extends AbstractRuaPackage {
     return this
   }
 
-  private load(evts: MultiEvents): RuaEvent {
+  public load(evts: MultiEvents): RuaEvent {
     this.store.addListeners(evts)
     return this
   }
