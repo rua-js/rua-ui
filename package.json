@@ -1,6 +1,6 @@
 {
   "name": "rua-event",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "An elegant way to handle events",
   "main": "lib/index.js",
   "scripts": {
