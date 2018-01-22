@@ -3,7 +3,3 @@
 ![production ready](https://img.shields.io/badge/production--ready-YES-brightgreen.svg)
 
 An elegant way to handle events
-
-## Status: Developing
-Production ready, but need fully implementation
-
