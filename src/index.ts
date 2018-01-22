@@ -1,5 +1,4 @@
 // Third-party Dependency
-// import invariant from 'invariant'
 
 // Self Dependency
 import RuaEvent from './RuaEvent'
@@ -7,17 +6,7 @@ import RuaEvent from './RuaEvent'
 // Rua Core Dependency
 import { packager } from 'rua-core/lib'
 
-const eventInstance = (() => {
-  if (packager.hasPackage('rua-event')) {
-    return packager.getPackage('rua-event')
-  }
+// @ts-ignore: subclass
+const eventInstance: RuaEvent = packager.registerIfNotRegistered('rua-event', new RuaEvent())
 
-  return packager.registerIfNotRegistered('rua-event', new RuaEvent())
-})()
-
-
-const event: RuaEvent = eventInstance
-
-export {
-  event,
-}
+export const event: RuaEvent = eventInstance
