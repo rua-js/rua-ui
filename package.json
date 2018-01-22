@@ -4,7 +4,7 @@
   "description": "An elegant way to handle events",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest test.ts --coverage"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,27 @@
     "wolfy87-eventemitter": "^5.2.4"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.91"
+    "@types/jest": "^22.0.1",
+    "@types/lodash": "^4.14.91",
+    "jest": "^22.1.4",
+    "ts-jest": "^22.0.1",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true
+      }
+    }
   }
 }

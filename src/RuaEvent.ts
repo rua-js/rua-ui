@@ -61,7 +61,7 @@ export default class RuaEvent extends AbstractRuaPackage {
    * @param {Function} callback
    * @returns {RuaEvent}
    */
-  public removeOne(event: string | RegExp, callback: Function): RuaEvent {
+  public remove(event: string | RegExp, callback: Function): RuaEvent {
     // @ts-ignore: no error here
     this.store.removeListener(event, callback)
     return this
@@ -78,15 +78,6 @@ export default class RuaEvent extends AbstractRuaPackage {
   }
 
   /**
-   * Gets all listeners.
-   *
-   * @returns {AnyObject}
-   */
-  public getAll(): AnyObject {
-    return this.get(/./)
-  }
-
-  /**
    * Returns the listener array for the specified event. (if string is given)
    * Returns listeners object for the specified event. (if RegExp is given)
    *
@@ -96,6 +87,15 @@ export default class RuaEvent extends AbstractRuaPackage {
   public get(event: string | RegExp ): AnyObject | Function[] {
     // @ts-ignore: no error here
     return this.store.getListeners(event)
+  }
+
+  /**
+   * Gets all listeners.
+   *
+   * @returns {AnyObject}
+   */
+  public getAll(): AnyObject {
+    return this.get(/./)
   }
 
   /**
