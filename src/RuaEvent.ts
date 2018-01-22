@@ -2,6 +2,7 @@ import { AbstractRuaPackage } from 'rua-core/lib/Abstractions'
 // @ts-ignore: import problem
 import * as EventEmitter from 'wolfy87-eventemitter'
 import { MultiEvents } from './Types'
+import { AnyObject } from 'rua-core/lib/Types'
 
 export default class RuaEvent extends AbstractRuaPackage {
 
@@ -13,28 +14,41 @@ export default class RuaEvent extends AbstractRuaPackage {
     this.booted = true
   }
 
-  public on(evt: string, callback: Function): RuaEvent {
-    this.store.on(evt, callback)
+  public on(event: string | RegExp, callback: Function): RuaEvent {
+    // @ts-ignore: no error here
+    this.store.on(event, callback)
     return this
   }
 
-  public once(evt: string, callback: Function): RuaEvent {
-    this.store.once(evt, callback)
+  public once(event: string | RegExp, callback: Function): RuaEvent {
+    // @ts-ignore: no error here
+    this.store.once(event, callback)
     return this
   }
 
-  public emit(evt: string | RegExp | any, ...args: any[]): RuaEvent {
-    this.store.emit(evt, args)
+  public emit(event: string | RegExp, ...args: any[]): RuaEvent {
+    // @ts-ignore: no error here
+    this.store.emit(event, args)
     return this
   }
 
-  public removeOne(evt: string | RegExp | any, callback: Function): RuaEvent {
-    this.store.removeListener(evt, callback)
+  public removeOne(event: string | RegExp, callback: Function): RuaEvent {
+    // @ts-ignore: no error here
+    this.store.removeListener(event, callback)
     return this
   }
 
-  public load(evts: MultiEvents): RuaEvent {
-    this.store.addListeners(evts)
+  public getAll(): AnyObject {
+    return this.get(/./)
+  }
+
+  public get(event: string | RegExp ): AnyObject | Function[] {
+    // @ts-ignore: no error here
+    return this.store.getListeners(event)
+  }
+
+  public load(events: MultiEvents): RuaEvent {
+    this.store.addListeners(events)
     return this
   }
 

@@ -1,4 +1,6 @@
 # Rua-Event
 An elegant way to handle events
 
-## Status: Prototyping
+## Status: Developing
+Production ready, but need fully implementation
+

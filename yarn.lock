@@ -6,6 +6,17 @@
   version "4.14.91"
   resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.91.tgz#794611b28056d16b5436059c6d800b39d573cd3a"
 
+dom-walk@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/dom-walk/-/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
+
+global@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.npmjs.org/global/-/global-4.3.2.tgz#e76989268a6c74c38908b1305b10fc0e394e9d0f"
+  dependencies:
+    min-document "^2.19.0"
+    process "~0.5.1"
+
 invariant@^2.2.2:
   version "2.2.2"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
@@ -26,10 +37,21 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0"
 
-rua-core@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.npmjs.org/rua-core/-/rua-core-0.1.8.tgz#8d65ef90c7ab8a5342e57d64ee8afc2f9bb6f945"
+min-document@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.npmjs.org/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
   dependencies:
+    dom-walk "^0.1.0"
+
+process@~0.5.1:
+  version "0.5.2"
+  resolved "https://registry.npmjs.org/process/-/process-0.5.2.tgz#1638d8a8e34c2f440a91db95ab9aeb677fc185cf"
+
+rua-core@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/rua-core/-/rua-core-0.2.0.tgz#1d69b9f277b82964f6e8829d7224eb7813055a06"
+  dependencies:
+    global "^4.3.2"
     invariant "^2.2.2"
 
 wolfy87-eventemitter@^5.2.4:
