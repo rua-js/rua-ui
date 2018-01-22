@@ -37,6 +37,11 @@ export default class RuaEvent extends AbstractRuaPackage {
     this.store.removeListener(event, callback)
     return this
   }
+  
+  public removeAll(): RuaEvent {
+    this.store.removeAllListeners()
+    return this
+  }
 
   public getAll(): AnyObject {
     return this.get(/./)
