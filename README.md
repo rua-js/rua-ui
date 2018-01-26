@@ -10,4 +10,4 @@ We use
 as the core of Rua-Event
 
 ## Api
-Website is Coming Soon
+Coming Soon
