@@ -11,11 +11,11 @@ interface RuaEventInterface {
 
   remove(event: string | RegExp, callback: Function): RuaEventInterface
 
-  removeAll(): RuaEventInterface
+  clear(): RuaEventInterface
 
   get(event: string | RegExp ): AnyObject | Function[]
 
-  getAll(): AnyObject
+  all(): AnyObject
 
   load(events: MultiEvents): RuaEventInterface
 }

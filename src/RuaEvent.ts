@@ -73,7 +73,7 @@ class RuaEvent extends AbstractRuaPackage implements RuaEventInterface{
    *
    * @returns {RuaEvent}
    */
-  public removeAll(): RuaEvent {
+  public clear(): RuaEvent {
     this.store.removeAllListeners()
     return this
   }
@@ -95,7 +95,7 @@ class RuaEvent extends AbstractRuaPackage implements RuaEventInterface{
    *
    * @returns {AnyObject}
    */
-  public getAll(): AnyObject {
+  public all(): AnyObject {
     return this.get(/./)
   }
 
