@@ -4,5 +4,10 @@
 
 An elegant event emitter library
 
+## Thanks to
+We use
+[EventEmitter](https://github.com/Olical/EventEmitter)@[Olical](https://github.com/Olical)
+as the core of Rua-Event
+
 ## Api
 Website is Coming Soon
