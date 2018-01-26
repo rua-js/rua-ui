@@ -3,8 +3,9 @@ import { AbstractRuaPackage } from 'rua-core/lib/Abstractions'
 import * as EventEmitter from 'wolfy87-eventemitter'
 import { MultiEvents } from './Types'
 import { AnyObject } from 'rua-core/lib/Types'
+import { RuaEventInterface } from './Interface'
 
-export default class RuaEvent extends AbstractRuaPackage {
+class RuaEvent extends AbstractRuaPackage implements RuaEventInterface{
 
   public store: EventEmitter
 
@@ -84,7 +85,7 @@ export default class RuaEvent extends AbstractRuaPackage {
    * @param {string | RegExp} event
    * @returns {AnyObject | Function[]}
    */
-  public get(event: string | RegExp ): AnyObject | Function[] {
+  public get(event: string | RegExp): AnyObject | Function[] {
     // @ts-ignore: no error here
     return this.store.getListeners(event)
   }
@@ -109,3 +110,5 @@ export default class RuaEvent extends AbstractRuaPackage {
     return this
   }
 }
+
+export default RuaEvent
