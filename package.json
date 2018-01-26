@@ -1,10 +1,11 @@
 {
   "name": "rua-event",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "An elegant way to handle events",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest test.ts --coverage"
+    "test": "jest test.ts --coverage",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

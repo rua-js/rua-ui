@@ -39,7 +39,7 @@ describe('RuaEvent Tests', () => {
       onceCallback.mock.calls.length
     ).toBe(1)
   })
-  test('set and get (.get, .getAll, .load)', () => {
+  test('set and get (.get, .all, .load)', () => {
     // preparation
     const evt = new RuaEvent()
     const fakeFn = jest.fn()
@@ -88,15 +88,15 @@ describe('RuaEvent Tests', () => {
       // @ts-ignore
       typeof evt.get(/test[12]/).test2
     ).toBeTruthy()
-    // case: .getAll
+    // case: .all
     expect(
       // @ts-ignore
-      evt.getAll().test1 &&
-      evt.getAll().test2 &&
-      evt.getAll().test3
+      evt.all().test1 &&
+      evt.all().test2 &&
+      evt.all().test3
     ).toBeTruthy()
   })
-  test('removal (.remove, .removeAll)', () => {
+  test('removal (.remove, .clear)', () => {
     // preparation
     const evt = new RuaEvent()
     const fakeFn = jest.fn()
@@ -121,9 +121,9 @@ describe('RuaEvent Tests', () => {
       evt.get('test3')
     ).toEqual([])
     // case: removeAll
-    evt.removeAll()
+    evt.clear()
     expect(
-      evt.getAll()
+      evt.all()
     ).toEqual({})
   })
 })
