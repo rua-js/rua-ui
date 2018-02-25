@@ -4,15 +4,15 @@ import { View } from 'react-native'
 class PaddedView extends React.Component<Props, never> {
 
   static defaultProps = {
-    all: 0,
+    xy: 0,
   }
 
   computePaddingStyle = () => {
-    const { all, x, y, top, bottom, left, right } = this.props
-    const paddingLeft = left || x || all
-    const paddingRight = right || x || all
-    const paddingTop = top || y || all
-    const paddingBottom = bottom || y || all
+    const { xy, x, y, top, bottom, left, right } = this.props
+    const paddingLeft = left || x || xy
+    const paddingRight = right || x || xy
+    const paddingTop = top || y || xy
+    const paddingBottom = bottom || y || xy
     return {
       paddingLeft,
       paddingRight,
@@ -38,7 +38,7 @@ class PaddedView extends React.Component<Props, never> {
 }
 
 interface Props {
-  all?: number | string
+  xy?: number | string
   x?: number | string
   y?: number | string
   top?: number | string
