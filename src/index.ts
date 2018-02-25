@@ -1,5 +1,5 @@
 // Elements
-import { Text, TouchableView } from './Primitives'
+import { Text, View, TouchableView } from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
