@@ -34,8 +34,9 @@ class PaddedView extends React.Component<Props, never>
 
   render()
   {
+    const { containerStyle } = this.props
     return (
-      <View style={this.computePaddingStyle()}>
+      <View style={[this.computePaddingStyle(), containerStyle]}>
         {this.renderChildren()}
       </View>
     )
