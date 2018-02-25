@@ -18,6 +18,10 @@
   version "4.14.91"
   resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.91.tgz#794611b28056d16b5436059c6d800b39d573cd3a"
 
+"@types/react@^16.0.38":
+  version "16.0.38"
+  resolved "https://registry.npmjs.org/@types/react/-/react-16.0.38.tgz#76617433ea10274505f60bb86eddfdd0476ffdc2"
+
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
