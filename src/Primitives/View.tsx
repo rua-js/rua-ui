@@ -93,11 +93,11 @@ interface Props
   justify?: 'start' | 'center' | 'end' | 'around' | 'between'
   wrap?: any
   // View
-  height?: number | string
-  width?: number | string
-  borderWidth?: number
-  borderColor?: any
-  backgroundColor?: string
+  // height?: number | string
+  // width?: number | string
+  // borderWidth?: number
+  // borderColor?: any
+  // backgroundColor?: string
   // Children
   style?: any
   children?: React.ReactNode
