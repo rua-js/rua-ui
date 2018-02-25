@@ -1,8 +1,7 @@
 // View
-import {
-  PaddedView
-} from './Views'
+import { PaddedView, SpaceBetweenView, } from './Views'
 
 export {
   PaddedView,
+  SpaceBetweenView,
 }
