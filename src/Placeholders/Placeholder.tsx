@@ -4,8 +4,8 @@ import { StyleSheet, View, Image, Button, Text } from 'react-native'
 class Placeholder extends React.Component<Props, never> {
 
   static defaultProps = {
-    height: '100%',
-    width: '100%',
+    height: 100,
+    width: 100,
     color: 'red',
   }
 
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
 })
 
 interface Props {
-  height?: number
-  width?: number
+  height?: number | string
+  width?: number | string
   color?: string
 }
 
