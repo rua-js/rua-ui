@@ -23,7 +23,9 @@ class View extends React.Component<Props, any>
       children,
       ...restProps,
     } = this.props
+
     let transferConst = [justify, align]
+
     transferConst = transferConst.map(el =>
     {
       let tempTxt
@@ -48,7 +50,8 @@ class View extends React.Component<Props, any>
 
       return tempTxt
     })
-    const flexStyle = {
+
+    const viewStyle = {
       flexDirection: direction,
       flexWrap: wrap,
       justifyContent: transferConst[0],
@@ -56,7 +59,7 @@ class View extends React.Component<Props, any>
     }
 
     const inner = (
-      <RNView style={[flexStyle, style]} {...restProps}>
+      <RNView style={[viewStyle, style]} {...restProps}>
         {children}
       </RNView>
     )
@@ -70,8 +73,8 @@ class View extends React.Component<Props, any>
     if (!!shouldWrapInTouchableComponent)
     {
       return (
-        <TouchableView {...restProps}>
-          {inner}
+        <TouchableView style={[viewStyle, style]} {...restProps}>
+          {children}
         </TouchableView>
       )
     } else
@@ -90,6 +93,10 @@ interface Props
   justify?: 'start' | 'center' | 'end' | 'around' | 'between'
   wrap?: any
   // View
+  height?: number | string
+  width?: number | string
+  borderWidth?: number
+  borderColor?: any
   backgroundColor?: string
   // Children
   style?: any
