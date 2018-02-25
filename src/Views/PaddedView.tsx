@@ -51,6 +51,7 @@ interface Props
   bottom?: number | string
   left?: number | string
   right?: number | string
+  containerStyle?: any
 }
 
 export default PaddedView
