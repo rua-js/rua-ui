@@ -1,6 +1,6 @@
 {
-  "name": "rua-event",
-  "version": "1.1.1",
+  "name": "rua-ui",
+  "version": "0.0.1",
   "description": "An elegant event emitter library",
   "main": "lib/index.js",
   "scripts": {
