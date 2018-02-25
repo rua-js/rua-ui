@@ -4,22 +4,12 @@ import { StyleSheet, View } from 'react-native'
 class SpaceBetweenView extends React.Component<Props, never>
 {
 
-  renderChildren = () =>
+  render(): React.ReactNode
   {
-    const { children } = this.props
-    return React.Children.map(children, (item) =>
-    {
-      return item
-    })
-  }
-
-  // Render
-  render(): JSX.Element
-  {
-    const { containerStyle } = this.props
+    const { containerStyle, children } = this.props
     return (
       <View style={[styles.container, containerStyle]}>
-        {this.renderChildren()}
+        {children}
       </View>
     )
   }
