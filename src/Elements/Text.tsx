@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text as RNText } from 'react-native'
+import { Text as RNText, TextStatic, TextStyle } from 'react-native'
 
 class Text extends React.Component<Props, never>
 {
@@ -33,7 +33,15 @@ class Text extends React.Component<Props, never>
 
   render()
   {
-    const { children, ...rest } = this.props
+    const {
+      children,
+      color,
+      size,
+      weight,
+      align,
+      decorationLine,
+      ...rest
+    } = this.props
     return (
       <RNText
         style={[this.computeTextStyle()]}
@@ -45,7 +53,7 @@ class Text extends React.Component<Props, never>
   }
 }
 
-interface Props
+interface Props extends TextStyle
 {
   size?: number
   weight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
