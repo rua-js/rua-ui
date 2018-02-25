@@ -5,3 +5,5 @@ A mobile-first all platform unified ui kit
 
 #### View
 - [x] PaddedView
+- [x] SpaceBetweenView
+- [x] TouchableView
