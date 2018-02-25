@@ -1,12 +1,7 @@
 // Placeholders
-import {
-  Placeholder,
-  FluidPlaceholder,
-  SquarePlaceholder,
-} from './Placeholders'
-
+import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
-import { PaddedView, SpaceBetweenView, TouchableView } from './Views'
+import { PaddedView, MarginedView, SpaceBetweenView, TouchableView } from './Views'
 
 export {
   // Placeholders
@@ -15,6 +10,7 @@ export {
   SquarePlaceholder,
   // Views
   PaddedView,
+  MarginedView,
   SpaceBetweenView,
   TouchableView,
 }
