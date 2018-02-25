@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/rua-js/rua-event#readme",
   "dependencies": {
+    "react-native-platform-touchable": "^1.1.1",
     "rua-core": "^0.2.0",
     "wolfy87-eventemitter": "^5.2.4"
   },
