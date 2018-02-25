@@ -1,9 +1,9 @@
 // Elements
-import { Text, } from './Elements'
+import { Text, TouchableView } from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
-import { MarginedView, PaddedView, SpaceBetweenView, TouchableView } from './Views'
+import { MarginedView, PaddedView, SpaceBetweenView } from './Views'
 
 export {
   // Elements
