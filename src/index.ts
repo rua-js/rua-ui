@@ -1,9 +1,13 @@
+// Elements
+import { Text, } from './Elements'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
-import { PaddedView, MarginedView, SpaceBetweenView, TouchableView } from './Views'
+import { MarginedView, PaddedView, SpaceBetweenView, TouchableView } from './Views'
 
 export {
+  // Elements
+  Text,
   // Placeholders
   Placeholder,
   FluidPlaceholder,
