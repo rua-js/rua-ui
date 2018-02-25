@@ -8,6 +8,7 @@ import { MarginedView, PaddedView, SpaceBetweenView } from './Views'
 export {
   // Elements
   Text,
+  View,
   // Placeholders
   Placeholder,
   FluidPlaceholder,

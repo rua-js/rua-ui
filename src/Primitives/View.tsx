@@ -20,6 +20,9 @@ class View extends React.Component<Props, any>
       wrap,
       justify,
       align,
+      flex,
+      height,
+      width,
       children,
       ...restProps,
     } = this.props
@@ -52,6 +55,9 @@ class View extends React.Component<Props, any>
     })
 
     const viewStyle = {
+      flex,
+      height,
+      width,
       flexDirection: direction,
       flexWrap: wrap,
       justifyContent: transferConst[0],
@@ -92,9 +98,10 @@ interface Props
   align?: 'start' | 'center' | 'end' | 'stretch'
   justify?: 'start' | 'center' | 'end' | 'around' | 'between'
   wrap?: any
+  flex?: number
   // View
-  // height?: number | string
-  // width?: number | string
+  height?: number | string
+  width?: number | string
   // borderWidth?: number
   // borderColor?: any
   // backgroundColor?: string
