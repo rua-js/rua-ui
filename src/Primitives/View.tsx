@@ -10,6 +10,8 @@ class View extends React.Component<Props, any>
     wrap: 'nowrap',
     justify: 'start',
     align: 'center',
+    padding: 0,
+    margin: 0,
   }
 
   render()
@@ -76,20 +78,14 @@ class View extends React.Component<Props, any>
       flexWrap: wrap,
       justifyContent: transferConst[0],
       alignItems: transferConst[1],
-      padding,
-      paddingLeft,
-      paddingRight,
-      paddingTop,
-      paddingBottom,
-      paddingHorizontal: paddingX,
-      paddingVertical: paddingY,
-      margin,
-      marginLeft,
-      marginRight,
-      marginTop,
-      marginBottom,
-      marginHorizontal: marginX,
-      marginVertical: marginY,
+      paddingLeft: paddingLeft || paddingX || padding,
+      paddingRight: paddingRight || paddingX || padding,
+      paddingTop: paddingTop || paddingY || padding,
+      paddingBottom: paddingBottom || paddingY || padding,
+      marginLeft: marginLeft || marginX || margin,
+      marginRight: marginRight || marginX || margin,
+      marginTop: marginTop || marginY || margin,
+      marginBottom: marginBottom || marginY || margin,
     }
 
     const inner = (
