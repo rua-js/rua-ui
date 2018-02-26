@@ -90,7 +90,12 @@ class View extends React.Component<Props, any>
 
     const inner = (
       <RNView style={[viewStyle, style]} {...restProps}>
-        {children}
+        {
+          React.Children.map(children, (item) =>
+          {
+            return item
+          })
+        }
       </RNView>
     )
 
@@ -104,7 +109,7 @@ class View extends React.Component<Props, any>
     {
       return (
         <TouchableView style={[viewStyle, style]} {...restProps}>
-          {children}
+          {inner}
         </TouchableView>
       )
     } else
