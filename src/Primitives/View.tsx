@@ -23,6 +23,20 @@ class View extends React.Component<Props, any>
       flex,
       height,
       width,
+      padding,
+      paddingLeft,
+      paddingRight,
+      paddingTop,
+      paddingBottom,
+      paddingX,
+      paddingY,
+      margin,
+      marginLeft,
+      marginRight,
+      marginTop,
+      marginBottom,
+      marginX,
+      marginY,
       children,
       ...restProps,
     } = this.props
@@ -62,6 +76,20 @@ class View extends React.Component<Props, any>
       flexWrap: wrap,
       justifyContent: transferConst[0],
       alignItems: transferConst[1],
+      padding,
+      paddingLeft,
+      paddingRight,
+      paddingTop,
+      paddingBottom,
+      paddingHorizontal: paddingX,
+      paddingVertical: paddingY,
+      margin,
+      marginLeft,
+      marginRight,
+      marginTop,
+      marginBottom,
+      marginHorizontal: marginX,
+      marginVertical: marginY,
     }
 
     const inner = (
@@ -102,6 +130,20 @@ interface Props
   // View
   height?: number | string
   width?: number | string
+  padding?: number | string
+  paddingBottom?: number | string
+  paddingX?: number | string
+  paddingLeft?: number | string
+  paddingRight?: number | string
+  paddingTop?: number | string
+  paddingY?: number | string
+  margin?: number | string
+  marginBottom?: number | string
+  marginX?: number | string
+  marginLeft?: number | string
+  marginRight?: number | string
+  marginTop?: number | string
+  marginY?: number | string
   // borderWidth?: number
   // borderColor?: any
   // backgroundColor?: string
