@@ -5,9 +5,9 @@ class Container extends React.Component<Props, never> {
   render() {
     const { children } = this.props
     return (
-      <View style={styles.container}>
+      <div className={'container'}>
         {children}
-      </View>
+      </div>
     )
   }
 }
