@@ -1,10 +1,25 @@
 import * as React from 'react'
-import { StyleSheet, View, Image, Button, Text } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 
-class Container extends React.Component {
+class Container extends React.Component<Props, never> {
   render() {
-    return this.props.children
+    const { children } = this.props
+    return (
+      <View style={styles.container}>
+        {children}
+      </View>
+    )
   }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+})
+
+interface Props {
+
 }
 
 export default Container
