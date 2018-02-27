@@ -9,10 +9,8 @@ class View extends React.Component<Props, any>
     direction: 'row',
     wrap: 'nowrap',
     justify: 'start',
-    align: 'center',
     padding: 0,
     margin: 0,
-    flex: 1,
   }
 
   render()
