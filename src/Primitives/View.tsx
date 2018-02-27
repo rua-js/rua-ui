@@ -12,6 +12,7 @@ class View extends React.Component<Props, any>
     align: 'center',
     padding: 0,
     margin: 0,
+    flex: 1,
   }
 
   render()
@@ -78,20 +79,14 @@ class View extends React.Component<Props, any>
       flexWrap: wrap,
       justifyContent: transferConst[0],
       alignItems: transferConst[1],
-      padding,
-      paddingHorizontal: paddingX,
-      paddingVertical: paddingY,
-      paddingLeft,
-      paddingRight,
-      paddingTop,
-      paddingBottom,
-      margin,
-      marginHorizontal: marginX,
-      marginVertical: marginY,
-      marginLeft,
-      marginRight,
-      marginTop,
-      marginBottom,
+      paddingLeft: paddingLeft || paddingX || padding,
+      paddingRight: paddingRight || paddingX || padding,
+      paddingTop: paddingTop || paddingY || padding,
+      paddingBottom: paddingBottom || paddingY || padding,
+      marginLeft: marginLeft || marginX || margin,
+      marginRight: marginRight || marginX || margin,
+      marginTop: marginTop || marginY || margin,
+      marginBottom: marginBottom || marginY || margin,
     }
 
     const inner = (
