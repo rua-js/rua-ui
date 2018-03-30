@@ -39,7 +39,7 @@ class View extends React.Component<Props, any>
       marginX,
       marginY,
       children,
-      ...restProps,
+      ...restProps
     } = this.props
 
     let transferConst = [justify, align]

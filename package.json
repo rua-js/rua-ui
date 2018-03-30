@@ -1,6 +1,6 @@
 {
   "name": "rua-ui",
-  "version": "0.1.1-alpha.1",
+  "version": "0.1.1-alpha.1-fix",
   "description": "An elegant event emitter library",
   "main": "lib/index.js",
   "scripts": {
@@ -14,10 +14,10 @@
   "keywords": [
     "rua",
     "rua.js",
-    "rua-event",
-    "event"
+    "ui",
+    "rua-ui"
   ],
-  "author": "copydog",
+  "author": "copydoghc",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rua-js/rua-event/issues"
