@@ -1,5 +1,9 @@
+import { StaticUI, } from '../routes'
+
 // ----- Screens -----
-export const home = {}
+export const home = {
+  StaticUI: { screen: StaticUI }
+}
 
 export const main = {}
 
