@@ -5,9 +5,10 @@ import { AppRegistry } from 'react-native'
 // 事件管理器
 
 // dva
-import { dvaLite } from 'rua'
+import { dvaLite } from 'rua-dva'
 
 // 导入模型
+import Router from './router'
 
 // 加载事件回调
 

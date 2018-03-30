@@ -3,7 +3,7 @@
  * 依赖
  * ------------------------------------------------------------------
  */
-import * as React from 'react'
+import React, { PureComponent } from 'react'
 import { BackHandler, Animated, Easing, Platform } from 'react-native'
 import {
   StackNavigator,
@@ -12,6 +12,11 @@ import {
   addNavigationHelpers,
   NavigationActions,
 } from 'react-navigation'
+import {
+  initializeListeners,
+  createReduxBoundAddListener,
+  createReactNavigationReduxMiddleware,
+} from 'react-navigation-redux-helpers'
 import { connect } from 'react-redux'
 import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator'
 
@@ -111,7 +116,6 @@ const AppNavigator = StackNavigator(
  * 配置路由
  * ------------------------------------------------------------------
  */
-
 function getCurrentScreen(navigationState) {
   if (!navigationState) {
     return null
@@ -123,13 +127,21 @@ function getCurrentScreen(navigationState) {
   return route.routeName
 }
 
-@connect(({ router }) => ({ router }))
+export const routerMiddleware = createReactNavigationReduxMiddleware(
+  'root',
+  state => state.router
+)
+const addListener = createReduxBoundAddListener('root')
+
+@connect(({ app, router }) => ({ app, router }))
 class Router extends React.PureComponent {
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.backHandle)
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    initializeListeners('root', this.props.router)
+  }
 
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.backHandle)
@@ -148,8 +160,17 @@ class Router extends React.PureComponent {
   }
 
   render() {
-    const { dispatch, router } = this.props
-    const navigation = addNavigationHelpers({ dispatch, state: router })
+    const { dispatch, app, router } = this.props
+    // if (app.loading) return <Loading />
+
+    const navigation = addNavigationHelpers({
+      dispatch,
+      state: router,
+      addListener,
+    })
+    if (!navigation.state) {
+      navigation.state = {}
+    }
     return <AppNavigator navigation={navigation} />
   }
 }
