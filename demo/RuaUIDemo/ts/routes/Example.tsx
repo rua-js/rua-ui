@@ -1,23 +1,26 @@
 import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
 import { connect } from 'react-redux'
+import { actions } from 'rua'
+import { Example1, Example2 } from '../components/Example'
 
-class StaticUI extends React.Component
+class Example extends React.Component<any, any>
 {
   static navigationOptions = {
     // ...R.style.header,
-    headerTitle: 'Static UI',
-    tabBarLabel: 'Static UI',
+    headerTitle: 'Example',
   }
 
   render()
   {
     return (
       <View>
-        <Text>123</Text>
+        <Text>Example</Text>
+        <Example1/>
+        <Example2/>
       </View>
     )
   }
 }
 
-export default StaticUI
+export default Example

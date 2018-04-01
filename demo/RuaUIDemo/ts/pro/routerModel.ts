@@ -1,5 +1,7 @@
-import { delay, NavigationActions } from '../utils'
-import { routerReducer } from '../router'
+import Promise from 'bluebird'
+// import { util } from 'rua'
+import { NavigationActions } from 'react-navigation'
+import { routerReducer } from './router'
 
 const actions = Object.values(NavigationActions).filter(
   x => typeof x === 'string' && x.startsWith('Navigation/')
@@ -12,6 +14,7 @@ const isPushAction = action =>
 export default {
   namespace: 'router',
   state: {
+    // @ts-ignore
     ...routerReducer(),
   },
   reducers: {
@@ -29,7 +32,7 @@ export default {
             payload,
           })
           // debounce, see https://github.com/react-community/react-navigation/issues/271
-          yield call(delay, 500)
+          yield call(Promise.delay, 500)
         }
       },
       { type: 'watcher' },
