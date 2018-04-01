@@ -33,4 +33,4 @@ const App = app.start(<Router />)
 /**
  * Mount React
  */
-AppRegistry.registerComponent('RuaPro', () => App)
+AppRegistry.registerComponent('RuaUIDemo', () => App)
