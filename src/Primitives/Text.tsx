@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { Text as RNText, TextStatic, TextStyle } from 'react-native'
+import { Text as RNText, TextProperties, TextStyle } from 'react-native'
 
 class Text extends React.Component<Props, never>
 {
 
+  // Synchronize style between Android and iOS
   static defaultProps = {
     size: 16,
     weight: '400',
@@ -12,39 +13,32 @@ class Text extends React.Component<Props, never>
     decorationLine: 'none',
   }
 
-  computeTextStyle = () =>
+  render()
   {
+    // Pick out NONE-RN Text property
     const {
+      children,
       color,
       size: fontSize,
       weight: fontWeight,
       align: textAlign,
-      decorationLine: textDecorationLine
+      decorationLine: textDecorationLine,
+      ...rest
     } = this.props
 
-    return {
+    // Compute text style
+    const computedTextStyle = {
       color,
       fontWeight,
       fontSize,
       textAlign,
       textDecorationLine,
     }
-  }
 
-  render()
-  {
-    const {
-      children,
-      color,
-      size,
-      weight,
-      align,
-      decorationLine,
-      ...rest
-    } = this.props
+    // Return
     return (
       <RNText
-        style={[this.computeTextStyle()]}
+        style={[computedTextStyle]}
         {...rest}
       >
         {children}
@@ -53,13 +47,14 @@ class Text extends React.Component<Props, never>
   }
 }
 
-interface Props extends TextStyle
+interface Props extends TextProperties
 {
   size?: number
   weight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   align?: 'auto' | 'left' | 'right' | 'center' | 'justify'
   color?: string
   decorationLine?: 'none' | 'underline' | 'line-through' | 'underline line-through'
+  style?: TextStyle
 }
 
 export default Text
