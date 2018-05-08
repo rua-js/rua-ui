@@ -4,7 +4,11 @@ import { Text as RNText, TextProperties, TextStyle } from 'react-native'
 class Text extends React.Component<Props, never>
 {
 
-  // Synchronize style between Android and iOS
+  /**
+   * Synchronize style between Android and iOS
+   *
+   * @type {object}
+   */
   static defaultProps = {
     size: 16,
     weight: '400',
@@ -13,6 +17,11 @@ class Text extends React.Component<Props, never>
     decorationLine: 'none',
   }
 
+  /**
+   * Render function
+   *
+   * @returns {any}
+   */
   render()
   {
     // Pick out NONE-RN Text property
