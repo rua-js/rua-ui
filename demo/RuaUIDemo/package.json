@@ -9,6 +9,7 @@
     "android": "react-native run-android"
   },
   "dependencies": {
+    "antd-mobile": "^2.1.8",
     "bluebird": "^3.5.1",
     "react": "^16.3.0-alpha.1",
     "react-native": "0.54.4",

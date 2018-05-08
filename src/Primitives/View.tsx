@@ -139,9 +139,6 @@ interface Props
   marginRight?: number | string
   marginTop?: number | string
   marginY?: number | string
-  // borderWidth?: number
-  // borderColor?: any
-  // backgroundColor?: string
   // Children
   style?: any
   children?: React.ReactNode
