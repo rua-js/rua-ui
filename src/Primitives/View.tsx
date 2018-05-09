@@ -38,11 +38,6 @@ class View extends React.Component<Props, any>
 
     transferConst = transferConst.map(el =>
     {
-      if (!el)
-      {
-        return el
-      }
-
       let tempTxt
 
       switch (el)

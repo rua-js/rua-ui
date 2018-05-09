@@ -27,6 +27,7 @@ class Text extends React.Component<Props, never>
     const {
       children,
       color,
+      style,
       size: fontSize,
       weight: fontWeight,
       align: textAlign,
@@ -39,6 +40,7 @@ class Text extends React.Component<Props, never>
       fontWeight,
       fontSize,
       textAlign,
+      ...style,
     }
 
     // Return
