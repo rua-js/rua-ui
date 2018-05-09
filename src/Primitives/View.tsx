@@ -1,18 +1,10 @@
 import * as React from 'react'
-import { View as RNView } from 'react-native'
+import { View as RNView, ViewStyle, StyleProp } from 'react-native'
 
 import TouchableView from './TouchableView'
 
 class View extends React.Component<Props, any>
 {
-  static defaultProps = {
-    direction: 'row',
-    wrap: 'nowrap',
-    justify: 'start',
-    padding: 0,
-    margin: 0,
-  }
-
   render()
   {
     let {
@@ -46,7 +38,13 @@ class View extends React.Component<Props, any>
 
     transferConst = transferConst.map(el =>
     {
+      if (!el)
+      {
+        return el
+      }
+
       let tempTxt
+
       switch (el)
       {
         case 'start':
@@ -140,7 +138,7 @@ interface Props
   marginTop?: number | string
   marginY?: number | string
   // Children
-  style?: any
+  style?: StyleProp<ViewStyle> | any
   children?: React.ReactNode
   // Touchable
   onPress?: Function
