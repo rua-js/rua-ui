@@ -14,6 +14,7 @@ class Text extends React.Component<Props, never>
     weight: '400',
     align: 'left',
     color: '#000',
+    style: {},
   }
 
   /**
