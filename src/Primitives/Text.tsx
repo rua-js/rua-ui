@@ -14,7 +14,6 @@ class Text extends React.Component<Props, never>
     weight: '400',
     align: 'left',
     color: '#000',
-    decorationLine: 'none',
   }
 
   /**
@@ -31,7 +30,6 @@ class Text extends React.Component<Props, never>
       size: fontSize,
       weight: fontWeight,
       align: textAlign,
-      decorationLine: textDecorationLine,
       ...rest
     } = this.props
 
@@ -41,7 +39,6 @@ class Text extends React.Component<Props, never>
       fontWeight,
       fontSize,
       textAlign,
-      textDecorationLine,
     }
 
     // Return
