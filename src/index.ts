@@ -6,7 +6,7 @@ import { Text, View, TouchableView } from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
-import { MarginedView, PaddedView, SpaceBetweenView } from './Views'
+import {  } from './Views'
 
 export {
   // Elements
@@ -19,8 +19,5 @@ export {
   FluidPlaceholder,
   SquarePlaceholder,
   // Views
-  PaddedView,
-  MarginedView,
-  SpaceBetweenView,
   TouchableView,
 }

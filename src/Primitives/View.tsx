@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View as RNView, ViewStyle, StyleProp } from 'react-native'
 
-import TouchableView from './TouchableView'
+import TouchableView from '../Internals/TouchableView'
 
 class View extends React.Component<Props, any>
 {

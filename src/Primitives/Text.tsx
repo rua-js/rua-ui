@@ -41,13 +41,12 @@ class Text extends React.Component<Props, never>
       fontWeight,
       fontSize,
       textAlign,
-      ...style,
     }
 
     // Return
     return (
       <RNText
-        style={[computedTextStyle]}
+        style={[computedTextStyle, style]}
         {...rest}
       >
         {children}
