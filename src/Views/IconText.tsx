@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
 interface Props
 {
   // Basic
-  direction?: "row" | "column" | "row-reverse" | "column-reverse"
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
   // Icon
   icon?: string
   iconSet?: string
