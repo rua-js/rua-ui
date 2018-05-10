@@ -14,6 +14,7 @@ class Text extends React.Component<Props, never>
     style: {},
     line: 'none',
     align: 'left',
+    // family: '',
     // lineHeight: 14', // no need
     // size: 14, // no need
   }
@@ -31,6 +32,7 @@ class Text extends React.Component<Props, never>
       color,
       style,
       lineHeight,
+      family: fontFamily,
       line: textDecorationLine,
       size: fontSize,
       weight: fontWeight,
@@ -46,6 +48,7 @@ class Text extends React.Component<Props, never>
       textAlign,
       textDecorationLine,
       lineHeight,
+      fontFamily,
     }
 
     // Return
@@ -70,6 +73,7 @@ interface Props extends TextProperties
   style?: TextStyle
   decoration?: 'none' | 'italic'
   lineHeight?: number
+  family?: string
 }
 
 export default Text
