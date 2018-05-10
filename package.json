@@ -1,6 +1,6 @@
 {
   "name": "rua-ui",
-  "version": "0.1.4",
+  "version": "0.1.4-fix1",
   "description": "An elegant ui kit",
   "main": "lib/index.js",
   "scripts": {
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/rua-js/rua-event#readme",
   "dependencies": {
     "react-native-platform-touchable": "^1.1.1",
+    "react-native-vector-icons": "^4.6.0",
     "rua-core": "^0.2.0",
     "wolfy87-eventemitter": "^5.2.4"
   },
