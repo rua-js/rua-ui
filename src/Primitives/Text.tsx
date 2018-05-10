@@ -10,9 +10,6 @@ class Text extends React.Component<Props, never>
    * @type {object}
    */
   static defaultProps = {
-    size: 16,
-    weight: '400',
-    align: 'left',
     color: '#000',
     style: {},
   }

@@ -1,16 +1,17 @@
 // Elements
-import { Container } from './Elements'
+import { Container, Space} from './Elements'
 
 // Primitives
-import { Text, View, TouchableView } from './Primitives'
+import { Text, View } from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
-import {  } from './Views'
+// import {  } from './Views'
 
 export {
   // Elements
   Container,
+  Space,
   // Primitives
   Text,
   View,
@@ -18,6 +19,4 @@ export {
   Placeholder,
   FluidPlaceholder,
   SquarePlaceholder,
-  // Views
-  TouchableView,
 }
