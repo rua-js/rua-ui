@@ -34,12 +34,14 @@ class IconText extends React.Component<Props, never>
   static defaultProps = {
     space: 5,
     textColor: '#333',
-    iconSet: 'material'
+    iconSet: 'material',
+    direction: 'column',
   }
 
   render()
   {
     const {
+      direction,
       space,
       icon,
       iconSet,
@@ -60,7 +62,7 @@ class IconText extends React.Component<Props, never>
 
     const inner = (
       <View style={styles.container}>
-        <View style={styles.iconText}>
+        <View style={[styles.iconText, { flexDirection: direction }]}>
           <Icon
             name={icon}
             color={iconColor}
@@ -110,6 +112,8 @@ const styles = StyleSheet.create({
 
 interface Props
 {
+  // Basic
+  direction?: "row" | "column" | "row-reverse" | "column-reverse"
   // Icon
   icon?: string
   iconSet?: string
