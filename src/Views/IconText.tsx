@@ -103,7 +103,6 @@ class IconText extends React.Component<Props, never>
 const styles = StyleSheet.create({
   container: {},
   iconText: {
-    width: '25%',
     alignItems: 'center',
     justifyContent: 'center',
   },
