@@ -12,6 +12,10 @@ class Text extends React.Component<Props, never>
   static defaultProps = {
     color: '#000',
     style: {},
+    line: 'none',
+    align: 'left',
+    // lineHeight: 14', // no need
+    // size: 14, // no need
   }
 
   /**
@@ -26,6 +30,8 @@ class Text extends React.Component<Props, never>
       children,
       color,
       style,
+      lineHeight,
+      line: textDecorationLine,
       size: fontSize,
       weight: fontWeight,
       align: textAlign,
@@ -38,6 +44,8 @@ class Text extends React.Component<Props, never>
       fontWeight,
       fontSize,
       textAlign,
+      textDecorationLine,
+      lineHeight,
     }
 
     // Return
@@ -58,8 +66,10 @@ interface Props extends TextProperties
   weight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   align?: 'auto' | 'left' | 'right' | 'center' | 'justify'
   color?: string
-  decorationLine?: 'none' | 'underline' | 'line-through' | 'underline line-through'
+  line?: 'none' | 'underline' | 'line-through' | 'underline line-through'
   style?: TextStyle
+  decoration?: 'none' | 'italic'
+  lineHeight?: number
 }
 
 export default Text
