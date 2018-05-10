@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { TouchableView } from '../Internals'
 
 class IconText extends React.Component<Props, never>
 {
@@ -10,7 +11,8 @@ class IconText extends React.Component<Props, never>
 
   render()
   {
-    const { icon, text, gutter } = this.props
+    const { icon, text, gutter, ...restProps } = this.props
+
     const inner = (
       <View style={styles.container}>
         <View style={styles.iconText}>
@@ -23,7 +25,23 @@ class IconText extends React.Component<Props, never>
       </View>
     )
 
-    return inner
+    const shouldWrapInTouchableComponent =
+      restProps.onPress ||
+      restProps.onLongPress ||
+      restProps.onPressIn ||
+      restProps.onPressOut
+
+    if (!!shouldWrapInTouchableComponent)
+    {
+      return (
+        <TouchableView style={styles.container} {...restProps}>
+          {inner}
+        </TouchableView>
+      )
+    } else
+    {
+      return inner
+    }
   }
 }
 
