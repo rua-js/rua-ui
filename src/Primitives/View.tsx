@@ -30,6 +30,7 @@ class View extends React.Component<Props, any>
       marginBottom,
       marginX,
       marginY,
+      backgroundColor,
       children,
       ...restProps
     } = this.props
@@ -68,6 +69,7 @@ class View extends React.Component<Props, any>
       width,
       flexDirection: direction,
       flexWrap: wrap,
+      backgroundColor,
       justifyContent: transferConst[0],
       alignItems: transferConst[1],
       paddingLeft: paddingLeft || paddingX || padding,
@@ -140,6 +142,11 @@ interface Props
   onLongPress?: Function
   onPressIn?: Function
   onPressOut?: Function
+  // Style
+  backgroundColor?: string
 }
 
 export default View
+export {
+  Props,
+}

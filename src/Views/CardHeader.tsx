@@ -7,6 +7,7 @@ class CardHeader extends React.Component<Props, never>
   render()
   {
     const {
+      containerStyle,
       rightContent,
       rightContentStyle,
       leftContent,
@@ -16,7 +17,7 @@ class CardHeader extends React.Component<Props, never>
     } = this.props
 
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, containerStyle]}>
         <View style={leftContentStyle}>
           {leftContent}
         </View>
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
 interface Props
 {
   title: string | number | React.ReactNode
+  containerStyle?: ViewStyle
   leftContent?: React.ReactNode
   leftContentStyle?: ViewStyle
   content?: React.ReactNode
