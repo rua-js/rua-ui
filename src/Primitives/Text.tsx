@@ -26,6 +26,7 @@ class Text extends React.Component<Props, never>
       color,
       style,
       lineHeight,
+      backgroundColor,
       family: fontFamily,
       line: textDecorationLine,
       size: fontSize,
@@ -43,6 +44,7 @@ class Text extends React.Component<Props, never>
       textDecorationLine,
       lineHeight,
       fontFamily,
+      backgroundColor,
     }
 
     // Return
@@ -74,6 +76,7 @@ interface Props extends TextProperties
   decoration?: 'none' | 'italic'
   lineHeight?: number
   family?: string
+  backgroundColor?: string
 }
 
 export default Text
