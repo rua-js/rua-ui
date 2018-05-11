@@ -55,6 +55,7 @@ class IconText extends React.Component<Props, never>
       textDecoration,
       textWeight,
       textLine,
+      textStyle,
       ...restProps
     } = this.props
 
@@ -77,6 +78,7 @@ class IconText extends React.Component<Props, never>
             decoration={textDecoration}
             weight={textWeight}
             line={textLine}
+            style={textStyle}
           >{text}</Text>
         </View>
       </View>
