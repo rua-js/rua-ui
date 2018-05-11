@@ -18,13 +18,13 @@ class CardHeader extends React.Component<Props, never>
 
     return (
       <View style={[styles.container, containerStyle]}>
-        <View style={leftContentStyle}>
+        <View style={[styles.subContent, leftContentStyle]}>
           {leftContent}
         </View>
-        <View style={contentStyle}>
+        <View style={[styles.subContent, contentStyle]}>
           {content}
         </View>
-        <View style={rightContentStyle}>
+        <View style={[styles.subContent, rightContentStyle]}>
           {rightContent}
         </View>
       </View>
@@ -43,6 +43,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderTopWidth: 1,
     width: '100%',
+  },
+  subContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 })
 
