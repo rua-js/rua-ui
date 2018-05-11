@@ -6,7 +6,7 @@ import { Text, View } from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
-import { IconText } from './Views'
+import { IconText, Card } from './Views'
 
 export {
   // Elements
@@ -21,4 +21,5 @@ export {
   SquarePlaceholder,
   // View
   IconText,
+  Card,
 }
