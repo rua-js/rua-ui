@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text as RNText, TextProperties, TextStyle } from 'react-native'
+import { Text as RNText, TextProperties, TextStyle, StyleSheet } from 'react-native'
 
 class Text extends React.Component<Props, never>
 {
@@ -10,13 +10,7 @@ class Text extends React.Component<Props, never>
    * @type {object}
    */
   static defaultProps = {
-    color: '#000',
     style: {},
-    line: 'none',
-    align: 'left',
-    // family: '',
-    // lineHeight: 14', // no need
-    // size: 14, // no need
   }
 
   /**
@@ -54,7 +48,7 @@ class Text extends React.Component<Props, never>
     // Return
     return (
       <RNText
-        style={[computedTextStyle, style]}
+        style={[styles.el, computedTextStyle, style]}
         {...rest}
       >
         {children}
@@ -62,6 +56,12 @@ class Text extends React.Component<Props, never>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  el: {
+    color: '#000',
+  },
+})
 
 interface Props extends TextProperties
 {
