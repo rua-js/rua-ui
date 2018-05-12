@@ -5,7 +5,7 @@ class Space extends React.Component<Props, never>
 {
 
   static defaultProps = {
-    size: 'md',
+    size: 10,
     direction: 'horizontal',
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "rua-ui",
-  "version": "0.1.7-fix3",
+  "version": "0.1.7-fix6",
   "description": "An elegant ui kit",
   "main": "lib/index.js",
   "scripts": {
