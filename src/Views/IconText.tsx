@@ -42,7 +42,7 @@ class IconText extends React.Component<Props, never>
   {
     const {
       direction,
-      space,
+      gutter,
       icon,
       iconSet,
       iconColor,
@@ -61,6 +61,10 @@ class IconText extends React.Component<Props, never>
 
     const Icon = iconComponents[iconSet]
 
+    const computedIconStyle = {
+      height: iconSize,
+    }
+
     const inner = (
       <View style={styles.container}>
         <View style={[styles.iconText, { flexDirection: direction }]}>
@@ -68,9 +72,9 @@ class IconText extends React.Component<Props, never>
             name={icon}
             color={iconColor}
             size={iconSize}
-            style={iconStyle}
+            style={[computedIconStyle, iconStyle]}
           />
-          <Space size={space} />
+          <Space size={gutter} />
           <Text
             color={textColor}
             size={textSize}
@@ -134,7 +138,7 @@ interface Props
   textLineHeight?: number
   textFamily?: string
   // space
-  space?: number
+  gutter?: number
   // Touchable
   onPress?: Function
   onLongPress?: Function
