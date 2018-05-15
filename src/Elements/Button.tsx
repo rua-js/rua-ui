@@ -3,6 +3,7 @@ import { Text, View } from '../Primitives'
 import { StyleSheet } from 'react-native'
 
 import Border from './Border'
+import { colors } from '../Configs'
 
 class Button extends React.Component<Props, never>
 {
@@ -48,11 +49,11 @@ class Button extends React.Component<Props, never>
     // Compute color
     const colorTypes = {
       normal: textColor || '#fff',
-      outline: textColor || color || '#ed393a',
+      outline: textColor || color || color,
     }
 
     const backgroundColorTypes = {
-      normal: backgroundColor || color || '#ed393a',
+      normal: backgroundColor || color || colors.primary,
       outline: backgroundColor || '#fff',
     }
 
@@ -68,7 +69,7 @@ class Button extends React.Component<Props, never>
 
     // Compute styles
     const computedBorderWidth = borderWidth || 1
-    const computedBorderColor = color || borderColor || '#ed393a'
+    const computedBorderColor = color || borderColor || colors.primary
 
     return (
       <Border

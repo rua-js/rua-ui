@@ -1,7 +1,7 @@
-import size  from './sizes'
-import color from './colors'
+import sizes from './sizes'
+import colors from './colors'
 
 export {
-  color,
-  size,
+  colors,
+  sizes,
 }

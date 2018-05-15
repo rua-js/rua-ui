@@ -1,17 +1,18 @@
 // Elements
-import { Container, Space} from './Elements'
-
+import { Border, Button, Container, Space } from './Elements'
 // Primitives
 import { Text, View } from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
-import { IconText, Card } from './Views'
+import { Card, IconText } from './Views'
 
 export {
   // Elements
   Container,
   Space,
+  Button,
+  Border,
   // Primitives
   Text,
   View,
