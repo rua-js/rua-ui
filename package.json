@@ -26,6 +26,7 @@
   "dependencies": {
     "react-native-platform-touchable": "^1.1.1",
     "react-native-vector-icons": "^4.6.0",
+    "rua": "^0.5.2-fix.4",
     "rua-core": "^0.2.0",
     "wolfy87-eventemitter": "^5.2.4"
   },

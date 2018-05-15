@@ -8,7 +8,7 @@ import CardHeader from './CardHeader'
 class Card extends React.Component<Props, never>
 {
 
-  static CardHeader = CardHeader
+  static Header = CardHeader
 
   render()
   {
