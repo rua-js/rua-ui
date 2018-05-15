@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
 class Border extends React.Component<Props, never>
 {
@@ -12,12 +12,14 @@ class Border extends React.Component<Props, never>
       width,
       color,
       radius,
+      style,
       children,
     } = this.props
 
     // compute style
 
     const computedStyle = {
+      ...style,
       borderWidth: width,
       borderColor: color,
       borderRadius: radius,
@@ -38,10 +40,12 @@ const styles = StyleSheet.create({
   },
 })
 
-interface Props {
+interface Props
+{
   width?: number
   color?: string
   radius?: number
+  style?: any
 }
 
 export default Border

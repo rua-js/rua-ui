@@ -3,34 +3,6 @@ import { Text, View, StyleSheet } from 'react-native'
 
 class TextView extends React.Component<Props, never>
 {
-
-  static defaultProps = {
-    size: 16,
-    color: '#000',
-    textAlign: 'left',
-    backgroundColor: 'transparent'
-  }
-
-  computeContainerStyle = () =>
-  {
-    const { size, color, textAlign } = this.props
-    return {
-      color,
-      textAlign,
-      fontSize: size,
-    }
-  }
-
-  computeTextStyle = () =>
-  {
-    const { height, width, align, backgroundColor } = this.props
-    return {
-      height,
-      width,
-      backgroundColor,
-    }
-  }
-
   render()
   {
     const { containerStyle, textStyle, children } = this.props

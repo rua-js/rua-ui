@@ -25,6 +25,13 @@ class Button extends React.Component<Props, never>
       borderWidth,
       type,
       fluid,
+      onPress,
+      onLongPress,
+      onPressIn,
+      onPressOut,
+      borderStyle,
+      viewStyle,
+      textStyle,
       children,
     } = this.props
 
@@ -64,14 +71,26 @@ class Button extends React.Component<Props, never>
     const computedBorderColor = color || borderColor || '#ed393a'
 
     return (
-      <Border width={computedBorderWidth} color={computedBorderColor} radius={computedRadius}>
+      <Border
+        width={computedBorderWidth}
+        color={computedBorderColor}
+        radius={computedRadius}
+        style={borderStyle}
+      >
         <View
-          style={styles.inner}
+          style={[styles.inner, viewStyle]}
           backgroundColor={computedBackgroundColor}
           width={computedWidth}
           height={computedHeight}
+          onPress={onPress}
+          onLongPress={onLongPress}
+          onPressIn={onPressIn}
+          onPressOut={onPressOut}
         >
-          <Text color={computedColor}>{children}</Text>
+          <Text
+            color={computedColor}
+            style={textStyle}
+          >{children}</Text>
         </View>
       </Border>
     )
@@ -92,6 +111,10 @@ interface Props
 {
   // Type
   type?: 'normal' | 'outline'
+  // Style
+  textStyle?: any
+  viewStyle?: any
+  borderStyle?: any
   // Special case
   rounded?: boolean
   fluid?: boolean
