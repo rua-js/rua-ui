@@ -1,11 +1,13 @@
 // Elements
-import { Border, Button, Container, Space, Icon } from './Elements'
+import { Border, Button, Container, Space, Icon, Divider } from './Elements'
 // Primitives
 import { Text, View } from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
 import { Card, IconText } from './Views'
+// Data Entry
+import { Picker } from './DataEntry'
 
 export {
   // Elements
@@ -14,6 +16,7 @@ export {
   Button,
   Border,
   Icon,
+  Divider,
   // Primitives
   Text,
   View,
@@ -24,4 +27,6 @@ export {
   // View
   IconText,
   Card,
+  // Data Entry
+  Picker,
 }

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { View } from 'react-native'
 
 import { default as EntypoIcon } from 'react-native-vector-icons/Entypo'
 import { default as EvilIconsIcon } from 'react-native-vector-icons/EvilIcons'
@@ -27,10 +26,14 @@ const iconComponents = {
 
 class Icon extends React.Component<IconProps, any>
 {
+  static defaultProps = {
+    set: 'material',
+  }
+
   render()
   {
     const {
-      icon,
+      name,
       set,
       color,
       size,
@@ -41,7 +44,7 @@ class Icon extends React.Component<IconProps, any>
 
     return (
       <Icon
-        name={icon}
+        name={name}
         color={color}
         size={size}
         style={style}
@@ -52,7 +55,7 @@ class Icon extends React.Component<IconProps, any>
 
 interface IconProps
 {
-  icon: string
+  name: string
   set: string
   color?: string
   size?: number

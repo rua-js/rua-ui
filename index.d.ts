@@ -1,5 +1,6 @@
-import { Border, Button, Container, Space } from './lib/Elements';
+import { Border, Button, Container, Space, Icon, Divider } from './lib/Elements';
 import { Text, View } from './lib/Primitives';
 import { FluidPlaceholder, Placeholder, SquarePlaceholder } from './lib/Placeholders';
 import { Card, IconText } from './lib/Views';
-export { Container, Space, Button, Border, Text, View, Placeholder, FluidPlaceholder, SquarePlaceholder, IconText, Card };
+import { Picker } from './lib/DataEntry';
+export { Container, Space, Button, Border, Icon, Divider, Text, View, Placeholder, FluidPlaceholder, SquarePlaceholder, IconText, Card, Picker };
