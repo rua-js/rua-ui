@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View as RNView, ViewStyle, StyleProp } from 'react-native'
+import { StyleProp, View as RNView, ViewStyle } from 'react-native'
 
 import TouchableView from '../Internals/TouchableView'
 
@@ -97,7 +97,7 @@ class View extends React.Component<Props, any>
     if (!!shouldWrapInTouchableComponent)
     {
       return (
-        <TouchableView style={[viewStyle, style]} {...restProps}>
+        <TouchableView style={[viewStyle, style, { width: undefined, height: undefined }]} {...restProps}>
           {inner}
         </TouchableView>
       )

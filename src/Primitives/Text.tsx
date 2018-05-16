@@ -61,7 +61,7 @@ class Text extends React.Component<Props, never>
 
 const styles = StyleSheet.create({
   el: {
-    color: '#000',
+    color: '#1b1b1b',
   },
 })
 
