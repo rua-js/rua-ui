@@ -5,6 +5,19 @@ import TouchableView from '../Internals/TouchableView'
 
 class View extends React.Component<Props, any>
 {
+  /**
+   * This methods checks if parent elements passed onClick into View
+   *
+   * @returns {Function | any}
+   */
+  handlePress = () => {
+    const { onClick, onPress } = this.props
+    if (onClick) {
+      onClick()
+    }
+    return onPress && onPress()
+  }
+
   render()
   {
     let {
@@ -31,6 +44,8 @@ class View extends React.Component<Props, any>
       marginX,
       marginY,
       backgroundColor,
+      onPress,
+      onClick,
       children,
       ...restProps
     } = this.props
@@ -89,7 +104,7 @@ class View extends React.Component<Props, any>
     )
 
     const shouldWrapInTouchableComponent =
-      restProps.onPress ||
+      onPress ||
       restProps.onLongPress ||
       restProps.onPressIn ||
       restProps.onPressOut
@@ -97,7 +112,11 @@ class View extends React.Component<Props, any>
     if (!!shouldWrapInTouchableComponent)
     {
       return (
-        <TouchableView style={[viewStyle, style, { width: undefined, height: undefined }]} {...restProps}>
+        <TouchableView
+          style={[viewStyle, style, { width: undefined, height: undefined }]}
+          {...restProps}
+          onPress={(onPress || onClick) && this.handlePress}
+        >
           {inner}
         </TouchableView>
       )
@@ -142,6 +161,7 @@ interface Props
   onLongPress?: Function
   onPressIn?: Function
   onPressOut?: Function
+  onClick?: Function
   // Style
   backgroundColor?: string
 }
