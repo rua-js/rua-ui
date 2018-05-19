@@ -1,7 +1,16 @@
 import * as React from 'react'
+
+import {
+  ViewStyle as RNViewStyle,
+  ViewProps as RNViewProps,
+  TextStyle as RNTextStyle,
+  TextProps as RNTextProps,
+  StyleProp as RNStyleProp,
+} from 'react-native'
+
 import { Text, View } from '../Primitives'
 
-export default class TextView extends React.Component<TextViewProps, never>
+class TextView extends React.Component<TextViewProps, never>
 {
   static defaultProps = {
     viewStyle: {},
@@ -12,19 +21,35 @@ export default class TextView extends React.Component<TextViewProps, never>
   {
     const {
       viewStyle,
+      viewProps,
       textStyle,
+      textProps,
       children
     } = this.props
     return (
-      <View style={viewStyle}>
-        <Text style={textStyle}>{children}</Text>
+      <View
+        style={viewStyle}
+        {...viewProps}
+      >
+        <Text
+          style={textStyle}
+          {...textProps}
+        >{children}</Text>
       </View>
     )
   }
 }
 
-export interface TextViewProps
+interface TextViewProps
 {
-  viewStyle: any
-  textStyle: any
+  viewStyle?: RNStyleProp<RNViewStyle>
+  viewProps?: RNViewProps
+  textStyle?: RNStyleProp<RNTextStyle>
+  textProps?: RNTextProps
+}
+
+export default TextView
+
+export {
+  TextViewProps,
 }
