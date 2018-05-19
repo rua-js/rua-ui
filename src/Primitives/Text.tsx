@@ -8,12 +8,19 @@ class Text extends React.Component<TextProps, never>
     const {
       children,
       style,
+      size,
+      color,
       ...restProps
     } = this.props
 
+    const computedStyle = {
+      color,
+      fontSize: size,
+    }
+
     return (
       <RNText
-        style={[styles.textDefault, style]}
+        style={[styles.textDefault, computedStyle, style]}
         {...restProps}
       >
         {children}
@@ -30,6 +37,8 @@ const styles = StyleSheet.create({
 
 export interface TextProps extends RNTextProps
 {
+  color?: string
+  size?: number
 }
 
 export default Text
