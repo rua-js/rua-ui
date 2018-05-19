@@ -47,7 +47,7 @@ class View extends React.Component<ViewProps, any>
           {...touchableViewProps}
           onPress={(onPress || onClick) && this.handlePress}
         >
-          <RNView style={{}} {...viewProps} {...restProps}>
+          <RNView style={style} {...viewProps} {...restProps}>
             {children}
           </RNView>
         </TouchableView>
