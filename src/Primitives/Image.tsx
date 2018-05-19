@@ -6,6 +6,7 @@ import {
   ViewProperties as RNViewProps,
   ViewStyle as RNViewStyle,
   StyleProp,
+  StyleSheet,
 } from 'react-native'
 import { View } from '../Primitives'
 
@@ -28,13 +29,20 @@ export default class Image extends React.Component<ImageProps, any>
       >
         <RNImage
           {...imageProps}
-          style={imageStyle}
+          style={[imageStyle, styles.imageDefault]}
           {...restProps}
         />
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  imageDefault: {
+    width: '100%',
+    height: '100%',
+  },
+})
 
 export interface ImageProps
 {
