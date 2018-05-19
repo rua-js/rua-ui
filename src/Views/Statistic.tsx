@@ -2,7 +2,7 @@ import * as React from 'react'
 import { StyleProp, StyleSheet, ViewStyle as RNViewStyle, } from 'react-native'
 
 import { View, ViewProps } from '../Primitives'
-import { TextView } from '../Views'
+import { TextView } from './'
 import { TextViewProps } from './TextView'
 import { Space } from '../Elements'
 
