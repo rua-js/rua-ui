@@ -1,2 +1,3 @@
-export { ScrollView } from 'react-native'
+import { ScrollView, ScrollViewStatic } from 'react-native'
 
+export default ScrollView as ScrollViewStatic

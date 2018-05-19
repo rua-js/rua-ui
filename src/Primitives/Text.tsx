@@ -85,3 +85,7 @@ interface TextProps extends TextProperties
 }
 
 export default Text
+
+export {
+  TextProps,
+}

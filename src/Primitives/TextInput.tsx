@@ -5,7 +5,7 @@ import {
   TextInputProperties as RNTextInputProps
 } from 'react-native'
 
-export default class TextInput extends React.Component<TextInputProps, never>
+class TextInput extends React.Component<TextInputProps, never>
 {
   render()
   {
@@ -29,7 +29,12 @@ const styles = StyleSheet.create({
   },
 })
 
-export interface TextInputProps extends RNTextInputProps
+interface TextInputProps extends RNTextInputProps
 {
 
+}
+export default TextInput
+
+export {
+  TextInputProps,
 }

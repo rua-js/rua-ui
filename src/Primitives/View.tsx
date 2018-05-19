@@ -1,9 +1,13 @@
 import * as React from 'react'
-import { StyleProp, View as RNView, ViewStyle } from 'react-native'
+import {
+  StyleProp,
+  View as RNView,
+  ViewStyle,
+} from 'react-native'
 
 import TouchableView from '../Internals/TouchableView'
 
-class View extends React.Component<Props, any>
+class View extends React.Component<ViewProps, any>
 {
   /**
    * This methods checks if parent elements passed onClick into View
@@ -131,7 +135,7 @@ class View extends React.Component<Props, any>
 }
 
 
-interface Props
+interface ViewProps
 {
   // Flex
   direction?: 'row' | 'column'
@@ -170,6 +174,7 @@ interface Props
 }
 
 export default View
+
 export {
-  Props,
+  ViewProps,
 }
