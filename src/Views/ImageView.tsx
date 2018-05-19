@@ -1,16 +1,15 @@
 import * as React from 'react'
 import {
   Image as RNImage,
-  ImageProperties as RNImageProps,
+  ImageProps as RNImageProps,
   ImageStyle as RNImageStyle,
-  ViewProperties as RNViewProps,
-  ViewStyle as RNViewStyle,
   StyleProp,
   StyleSheet,
+  ViewStyle as RNViewStyle,
 } from 'react-native'
-import { View } from '../Primitives'
+import { View, ViewProps } from '../Primitives'
 
-export default class ImageView extends React.Component<ImageViewProps, any>
+class ImageView extends React.Component<ImageViewProps, any>
 {
   render()
   {
@@ -46,9 +45,10 @@ const styles = StyleSheet.create({
 
 export interface ImageViewProps
 {
-  style?: StyleProp<RNImageStyle>
-  containerProps?: RNViewProps
+  containerProps?: ViewProps
   containerViewStyle?: StyleProp<RNViewStyle>
   imageProps?: RNImageProps
-  imageStyle?: StyleProp<RNViewStyle>
+  imageStyle?: StyleProp<RNImageStyle>
 }
+
+export default ImageView
