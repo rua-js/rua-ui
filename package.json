@@ -1,6 +1,6 @@
 {
   "name": "rua-ui",
-  "version": "0.2.5-alpha.1",
+  "version": "0.3.0-beta.1",
   "description": "An elegant ui kit",
   "main": "lib/index.js",
   "scripts": {
@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/rua-js/rua-ui#readme",
   "dependencies": {
+    "@types/react-native-elements": "^0.18.0",
     "antd-mobile": "^2.1.8",
+    "react-native-elements": "^0.19.1",
     "react-native-platform-touchable": "^1.1.1",
     "react-native-vector-icons": "^4.6.0",
     "rua": "^0.5.2-fix.4",

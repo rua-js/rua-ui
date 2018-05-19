@@ -6,16 +6,16 @@ class Space extends React.Component<Props, never>
 
   static defaultProps = {
     size: 10,
-    direction: 'horizontal',
+    type: 'horizontal',
   }
 
   render()
   {
-    const { size, direction } = this.props
+    const { size, type } = this.props
 
     let style
 
-    if (direction === 'horizontal')
+    if (type === 'horizontal')
     {
       style = { height: size }
     } else
@@ -32,7 +32,7 @@ class Space extends React.Component<Props, never>
 interface Props
 {
   size?: string | number
-  direction?: string
+  type?: string
 }
 
 export default Space

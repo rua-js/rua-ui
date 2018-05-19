@@ -1,31 +1,30 @@
 import * as React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View } from '../Primitives'
 
-class TextView extends React.Component<Props, never>
+export default class TextView extends React.Component<TextViewProps, never>
 {
+  static defaultProps = {
+    viewStyle: {},
+    textStyle: {},
+  }
+
   render()
   {
-    const { containerStyle, textStyle, children } = this.props
+    const {
+      viewStyle,
+      textStyle,
+      children
+    } = this.props
     return (
-      <View style={[this.computeContainerStyle(), containerStyle]}>
-        <Text style={[this.computeTextStyle(), textStyle]}>{children}</Text>
+      <View style={viewStyle}>
+        <Text style={textStyle}>{children}</Text>
       </View>
     )
   }
 }
 
-interface Props
+export interface TextViewProps
 {
-  size?: number | string
-  color?: string
-  textAlign?: string
-  align?: string
-  backgroundColor?: string
-  height?: number | string
-  width?: number | string
-  containerStyle?: any
-  textStyle?: any
-  children: string
+  viewStyle: any
+  textStyle: any
 }
-
-export default TextView

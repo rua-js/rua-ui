@@ -97,19 +97,22 @@ class View extends React.Component<Props, any>
       marginBottom: marginBottom || marginY || margin,
     }
 
+    // Inner element
     const inner = (
       <RNView style={[viewStyle, style]} {...restProps}>
         {children}
       </RNView>
     )
 
+    // Decide if should use Touchable
     const shouldWrapInTouchableComponent =
+      onClick ||
       onPress ||
       restProps.onLongPress ||
       restProps.onPressIn ||
       restProps.onPressOut
 
-    if (!!shouldWrapInTouchableComponent)
+    if (!!shouldWrapInTouchableComponent) // Need wrap in Touchable
     {
       return (
         <TouchableView
@@ -120,7 +123,7 @@ class View extends React.Component<Props, any>
           {inner}
         </TouchableView>
       )
-    } else
+    } else // No need wrap in Touchable
     {
       return inner
     }
