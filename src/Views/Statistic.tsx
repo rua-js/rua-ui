@@ -1,13 +1,21 @@
 import * as React from 'react'
-import { StyleProp, StyleSheet, ViewStyle as RNViewStyle, } from 'react-native'
+import {
+  StyleProp,
+  StyleSheet,
+  ViewStyle as RNViewStyle,
+  TextStyle as RNTextStyle,
+} from 'react-native'
 
-import { View, ViewProps } from '../Primitives'
+import { TextProps, View, ViewProps } from '../Primitives'
 import { TextView } from './'
-import { TextViewProps } from './TextView'
 import { Space } from '../Elements'
 
 class Statistic extends React.Component<StatisticProps, never>
 {
+  static defaultProps = {
+    spaceSize: 5,
+  }
+
   render()
   {
     const {
@@ -16,8 +24,14 @@ class Statistic extends React.Component<StatisticProps, never>
       value,
       label,
       spaceSize,
-      valueTextViewProps,
-      labelTextViewProps,
+      valueViewProps,
+      valueTextProps,
+      labelViewProps,
+      labelTextProps,
+      valueViewStyle,
+      valueTextStyle,
+      labelViewStyle,
+      labelTextStyle,
       renderValueComponent,
       renderLabelComponent,
       renderSpaceComponent,
@@ -32,9 +46,10 @@ class Statistic extends React.Component<StatisticProps, never>
             ? renderValueComponent(this.props)
             : (
               <TextView
-                textStyle={styles.value}
-                viewStyle={styles.valueText}
-                {...valueTextViewProps}
+                textStyle={[styles.value, valueTextStyle]}
+                textProps={valueTextProps}
+                viewStyle={[styles.valueText, valueViewStyle]}
+                viewProps={valueViewProps}
               >
                 {value}
               </TextView>
@@ -50,9 +65,10 @@ class Statistic extends React.Component<StatisticProps, never>
             ? renderLabelComponent(this.props)
             : (
               <TextView
-                textStyle={styles.label}
-                viewStyle={styles.labelText}
-                {...labelTextViewProps}
+                textStyle={[styles.label, labelTextStyle]}
+                textProps={labelTextProps}
+                viewStyle={[styles.labelText, labelViewStyle]}
+                viewProps={labelViewProps}
               >
                 {label}
               </TextView>
@@ -81,10 +97,16 @@ export interface StatisticProps
 {
   containerViewStyle?: StyleProp<RNViewStyle>
   containerViewProps?: ViewProps
-  valueTextViewProps?: TextViewProps
-  labelTextViewProps?: TextViewProps
-  value?: string | number
-  label?: string | number
+  valueViewProps?: ViewProps
+  valueTextProps?: TextProps
+  valueViewStyle?: StyleProp<RNViewStyle>
+  valueTextStyle?: StyleProp<RNTextStyle>
+  labelViewProps?: ViewProps
+  labelTextProps?: TextProps
+  labelViewStyle?: StyleProp<RNViewStyle>
+  labelTextStyle?: StyleProp<RNTextStyle>
+  value: string | number
+  label: string | number
   spaceSize?: number
   renderValueComponent?: (props: StatisticProps) => React.ReactNode
   renderLabelComponent?: (props: StatisticProps) => React.ReactNode
