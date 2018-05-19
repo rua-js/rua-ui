@@ -1,9 +1,5 @@
 import * as React from 'react'
-import {
-  StyleSheet,
-  TextInput as RNTextInput,
-  TextInputProperties as RNTextInputProps
-} from 'react-native'
+import { StyleSheet, TextInput as RNTextInput, TextProps as RNTextProps, } from 'react-native'
 
 class TextInput extends React.Component<TextInputProps, never>
 {
@@ -11,30 +7,27 @@ class TextInput extends React.Component<TextInputProps, never>
   {
     const {
       style,
-      ...restProps,
+      ...restProps
     } = this.props
+
     return (
       <RNTextInput
         underlineColorAndroid={'transparent'}
+        style={[styles.textInputDefault, style]}
         {...restProps}
-        style={[styles.textInputReset, style]}
       />
     )
   }
 }
 
 const styles = StyleSheet.create({
-  textInputReset: {
+  textInputDefault: {
     padding: 0,
   },
 })
 
-interface TextInputProps extends RNTextInputProps
+export interface TextInputProps extends RNTextProps
 {
-
 }
+
 export default TextInput
-
-export {
-  TextInputProps,
-}
