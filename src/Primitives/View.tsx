@@ -1,11 +1,7 @@
 import * as React from 'react'
-import {
-  StyleProp,
-  View as RNView,
-  ViewStyle,
-} from 'react-native'
+import { StyleProp, View as RNView, ViewProps as RNViewProps, ViewStyle, } from 'react-native'
 
-import TouchableView from '../Internals/TouchableView'
+import { TouchableView, TouchableViewProps } from '../Internals'
 
 class View extends React.Component<ViewProps, any>
 {
@@ -14,9 +10,11 @@ class View extends React.Component<ViewProps, any>
    *
    * @returns {Function | any}
    */
-  handlePress = () => {
+  handlePress = () =>
+  {
     const { onClick, onPress } = this.props
-    if (onClick) {
+    if (onClick)
+    {
       onClick()
     }
     return onPress && onPress()
@@ -26,87 +24,13 @@ class View extends React.Component<ViewProps, any>
   {
     let {
       style,
-      direction,
-      wrap,
-      justify,
-      align,
-      flex,
-      height,
-      width,
-      padding,
-      paddingLeft,
-      paddingRight,
-      paddingTop,
-      paddingBottom,
-      paddingX,
-      paddingY,
-      margin,
-      marginLeft,
-      marginRight,
-      marginTop,
-      marginBottom,
-      marginX,
-      marginY,
-      backgroundColor,
       onPress,
       onClick,
       children,
+      viewProps,
+      touchableViewProps,
       ...restProps
     } = this.props
-
-    let transferConst = [justify, align]
-
-    transferConst = transferConst.map(el =>
-    {
-      let tempTxt
-
-      switch (el)
-      {
-        case 'start':
-          tempTxt = 'flex-start'
-          break
-        case 'end':
-          tempTxt = 'flex-end'
-          break
-        case 'between':
-          tempTxt = 'space-between'
-          break
-        case 'around':
-          tempTxt = 'space-around'
-          break
-        default:
-          tempTxt = el
-          break
-      }
-
-      return tempTxt
-    })
-
-    const viewStyle = {
-      flex,
-      height,
-      width,
-      flexDirection: direction,
-      flexWrap: wrap,
-      backgroundColor,
-      justifyContent: transferConst[0],
-      alignItems: transferConst[1],
-      paddingLeft: paddingLeft || paddingX || padding,
-      paddingRight: paddingRight || paddingX || padding,
-      paddingTop: paddingTop || paddingY || padding,
-      paddingBottom: paddingBottom || paddingY || padding,
-      marginLeft: marginLeft || marginX || margin,
-      marginRight: marginRight || marginX || margin,
-      marginTop: marginTop || marginY || margin,
-      marginBottom: marginBottom || marginY || margin,
-    }
-
-    // Inner element
-    const inner = (
-      <RNView style={[viewStyle, style]} {...restProps}>
-        {children}
-      </RNView>
-    )
 
     // Decide if should use Touchable
     const shouldWrapInTouchableComponent =
@@ -120,61 +44,39 @@ class View extends React.Component<ViewProps, any>
     {
       return (
         <TouchableView
-          style={[viewStyle, style, { width: undefined, height: undefined }]}
-          {...restProps}
+          {...touchableViewProps}
           onPress={(onPress || onClick) && this.handlePress}
         >
-          {inner}
+          <RNView style={{}} {...viewProps} {...restProps}>
+            {children}
+          </RNView>
         </TouchableView>
       )
     } else // No need wrap in Touchable
     {
-      return inner
+      return (
+        <RNView style={style} {...viewProps} {...restProps}>
+          {children}
+        </RNView>
+      )
     }
   }
 }
 
 
-interface ViewProps
+export interface ViewProps extends RNViewProps
 {
-  // Flex
-  direction?: 'row' | 'column'
-  align?: 'start' | 'center' | 'end' | 'stretch'
-  justify?: 'start' | 'center' | 'end' | 'around' | 'between'
-  wrap?: any
-  flex?: number
-  // View
-  height?: number | string
-  width?: number | string
-  padding?: number | string
-  paddingBottom?: number | string
-  paddingX?: number | string
-  paddingLeft?: number | string
-  paddingRight?: number | string
-  paddingTop?: number | string
-  paddingY?: number | string
-  margin?: number | string
-  marginBottom?: number | string
-  marginX?: number | string
-  marginLeft?: number | string
-  marginRight?: number | string
-  marginTop?: number | string
-  marginY?: number | string
-  // Children
-  style?: StyleProp<ViewStyle> | any
+  style?: StyleProp<ViewStyle>
+  touchableViewStyle?: TouchableViewProps
   children?: React.ReactNode
+  viewProps?: RNViewProps
+  touchableViewProps?: TouchableViewProps
   // Touchable
   onPress?: Function
   onLongPress?: Function
   onPressIn?: Function
   onPressOut?: Function
   onClick?: Function
-  // Style
-  backgroundColor?: string
 }
 
 export default View
-
-export {
-  ViewProps,
-}
