@@ -21,4 +21,9 @@ class TouchableView extends React.Component<any, never> {
   }
 }
 
+export interface TouchableViewProps
+{
+  [key: string]: any
+}
+
 export default TouchableView
