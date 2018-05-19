@@ -1,7 +1,12 @@
 import * as React from 'react'
-import { Text as RNText, TextProperties, TextStyle, StyleSheet } from 'react-native'
+import {
+  Text as RNText,
+  TextProperties,
+  TextStyle,
+  StyleSheet,
+} from 'react-native'
 
-class Text extends React.Component<Props, never>
+class Text extends React.Component<TextProps, never>
 {
 
   /**
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
   },
 })
 
-interface Props extends TextProperties
+interface TextProps extends TextProperties
 {
   size?: number
   weight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'

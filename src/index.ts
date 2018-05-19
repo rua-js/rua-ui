@@ -5,7 +5,7 @@ import { Text, View, Image, ScrollView } from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
-import { Card, IconText, TextView } from './Views'
+import { Card, IconText, TextView, ImageView } from './Views'
 // Data Entry
 import { Picker } from './DataEntries'
 
