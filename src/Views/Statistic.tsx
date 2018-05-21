@@ -46,9 +46,9 @@ class Statistic extends React.Component<StatisticProps, never>
             ? renderValueComponent(this.props)
             : (
               <TextView
-                textStyle={[styles.value, valueTextStyle]}
+                textStyle={[styles.valueText, valueTextStyle]}
                 textProps={valueTextProps}
-                viewStyle={[styles.valueText, valueViewStyle]}
+                viewStyle={[styles.value, valueViewStyle]}
                 viewProps={valueViewProps}
               >
                 {value}
@@ -65,9 +65,9 @@ class Statistic extends React.Component<StatisticProps, never>
             ? renderLabelComponent(this.props)
             : (
               <TextView
-                textStyle={[styles.label, labelTextStyle]}
+                textStyle={[styles.labelText, labelTextStyle]}
                 textProps={labelTextProps}
-                viewStyle={[styles.labelText, labelViewStyle]}
+                viewStyle={[styles.label, labelViewStyle]}
                 viewProps={labelViewProps}
               >
                 {label}

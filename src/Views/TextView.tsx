@@ -40,7 +40,7 @@ class TextView extends React.Component<TextViewProps, never>
   }
 }
 
-interface TextViewProps
+export interface TextViewProps
 {
   viewStyle?: RNStyleProp<RNViewStyle>
   viewProps?: RNViewProps
@@ -49,7 +49,3 @@ interface TextViewProps
 }
 
 export default TextView
-
-export {
-  TextViewProps,
-}

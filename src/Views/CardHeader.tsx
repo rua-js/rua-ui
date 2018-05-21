@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
 })
 
-interface Props
+export interface Props
 {
   title: string | number | React.ReactNode
   containerStyle?: ViewStyle
