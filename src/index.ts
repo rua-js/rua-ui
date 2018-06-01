@@ -1,5 +1,5 @@
 // Elements
-import { Border, Button, Container, Space, Icon, Divider } from './Elements'
+import { Border, Button, Container, Space, Icon, Divider, Avatar } from './Elements'
 // Primitives
 import { Text, View, TextInput, Image, ScrollView } from './Primitives'
 // Placeholders
@@ -17,6 +17,7 @@ export {
   Border,
   Icon,
   Divider,
+  Avatar,
   // Primitives
   Text,
   View,
