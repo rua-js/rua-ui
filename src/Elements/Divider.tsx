@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
-import { actions } from 'rua-dva'
 import { colors } from '../Configs'
 
 class Divider extends React.Component<DividerProps, never> {
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
   },
 })
 
-interface DividerProps {
+export interface DividerProps {
   type?: 'horizontal' | 'vertical'
   color?: string
 }
