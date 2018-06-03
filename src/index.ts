@@ -1,7 +1,16 @@
 // Elements
 import { Border, Button, Container, Space, Icon, Divider, Avatar } from './Elements'
 // Primitives
-import { Text, View, TextInput, Image, ScrollView } from './Primitives'
+import {
+  Text,
+  TextProps,
+  View,
+  ViewProps,
+  TextInput,
+  TextInputProps,
+  Image,
+  ScrollView,
+} from './Primitives'
 // Placeholders
 import { FluidPlaceholder, Placeholder, SquarePlaceholder, } from './Placeholders'
 // Views
@@ -20,10 +29,13 @@ export {
   Avatar,
   // Primitives
   Text,
+  TextProps,
   View,
+  ViewProps,
   Image,
   ScrollView,
   TextInput,
+  TextInputProps,
   // Placeholders
   Placeholder,
   FluidPlaceholder,
