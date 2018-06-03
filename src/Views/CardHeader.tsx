@@ -27,19 +27,19 @@ class CardHeader extends React.Component<CardHeaderProps, never>
         {...containerProps}
       >
         <View
-          style={[styles.subContent, styles.leftContent, leftContentStyle]}
+          style={[styles.leftContent, leftContentStyle]}
           {...leftContentProps}
         >
           {leftContent}
         </View>
         <View
-          style={[styles.subContent, contentStyle]}
+          style={[styles.content, contentStyle]}
           {...contentProps}
         >
           {content}
         </View>
         <View
-          style={[styles.subContent, styles.rightContent, rightContentStyle]}
+          style={[styles.rightContent, rightContentStyle]}
           {...rightContentProps}
         >
           {rightContent}
@@ -61,17 +61,22 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     width: '100%',
   },
-  subContent: {
+  content: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   leftContent: {
     position: 'absolute',
     left: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   rightContent: {
     position: 'absolute',
     right: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 })
 
