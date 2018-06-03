@@ -2,13 +2,11 @@ import * as React from 'react'
 
 import {
   ViewStyle as RNViewStyle,
-  ViewProps as RNViewProps,
   TextStyle as RNTextStyle,
-  TextProps as RNTextProps,
   StyleProp as RNStyleProp,
 } from 'react-native'
 
-import { Text, View } from '../Primitives'
+import { Text, View, TextProps, ViewProps } from '../Primitives'
 
 class TextView extends React.Component<TextViewProps, never>
 {
@@ -43,9 +41,9 @@ class TextView extends React.Component<TextViewProps, never>
 export interface TextViewProps
 {
   viewStyle?: RNStyleProp<RNViewStyle>
-  viewProps?: RNViewProps
+  viewProps?: ViewProps
   textStyle?: RNStyleProp<RNTextStyle>
-  textProps?: RNTextProps
+  textProps?: TextProps
 }
 
 export default TextView
