@@ -15,6 +15,7 @@ class Container extends React.Component<Props, never> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: '100%',
   },
 })
 
