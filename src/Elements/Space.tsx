@@ -7,12 +7,14 @@ class Space extends React.Component<SpaceProps, never>
 
   static defaultProps = {
     size: 10,
+    color: 'transparent'
   }
 
   render()
   {
     const {
       size,
+      color,
       vertical,
       spaceStyle,
       spaceProps,
@@ -24,10 +26,10 @@ class Space extends React.Component<SpaceProps, never>
 
     if (vertical)
     {
-      innerStyle = { width: size, ...spaceStyle }
+      innerStyle = { width: size, backgroundColor: color, ...spaceStyle }
     } else
     {
-      innerStyle = { height: size, ...spaceStyle }
+      innerStyle = { height: size, backgroundColor: color, ...spaceStyle }
     }
 
     return (
@@ -39,6 +41,7 @@ class Space extends React.Component<SpaceProps, never>
 export interface SpaceProps
 {
   size?: string | number
+  color?: string
   vertical?: boolean
   spaceStyle?: ViewStyle
   spaceProps?: ViewProps
