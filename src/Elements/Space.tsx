@@ -1,38 +1,49 @@
 import * as React from 'react'
-import { View } from 'react-native'
+import { View, ViewStyle } from 'react-native'
+import { ViewProps } from '../Primitives'
 
-class Space extends React.Component<Props, never>
+class Space extends React.Component<SpaceProps, never>
 {
 
   static defaultProps = {
     size: 10,
-    type: 'horizontal',
   }
 
   render()
   {
-    const { size, type } = this.props
+    const {
+      size,
+      vertical,
+      spaceStyle,
+      spaceProps,
+      containerStyle,
+      containerProps,
+    } = this.props
 
-    let style
+    let innerStyle: ViewStyle
 
-    if (type === 'horizontal')
+    if (vertical)
     {
-      style = { height: size }
+      innerStyle = { width: size, ...spaceStyle }
     } else
     {
-      style = { width: size }
+      innerStyle = { height: size, ...spaceStyle }
     }
 
     return (
-      <View style={style} />
+      <View style={innerStyle} {...spaceProps} />
     )
   }
 }
 
-interface Props
+export interface SpaceProps
 {
   size?: string | number
-  type?: string
+  vertical?: boolean
+  spaceStyle?: ViewStyle
+  spaceProps?: ViewProps
+  containerStyle?: ViewStyle
+  containerProps?: ViewProps
 }
 
 export default Space

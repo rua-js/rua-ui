@@ -112,6 +112,25 @@ ansi-styles@^3.1.0, ansi-styles@^3.2.0:
   dependencies:
     color-convert "^1.9.0"
 
+antd-mobile-rn@^2.2.0:
+  version "2.2.0"
+  resolved "http://registry.npm.taobao.org/antd-mobile-rn/download/antd-mobile-rn-2.2.0.tgz#347946cfce9ca01d668db1756f0663f607f7d29c"
+  dependencies:
+    array-tree-filter "~2.1.0"
+    babel-runtime "6.x"
+    rc-swipeout "~2.0.0"
+    react-native-camera-roll-picker "^1.2.1"
+    react-native-collapsible "^0.9.0"
+    react-native-drawer-layout "~1.3.0"
+    react-native-menu "^0.23.0"
+    rmc-cascader "~5.0.0"
+    rmc-date-picker "^6.0.8"
+    rmc-dialog "^1.0.1"
+    rmc-input-number "^1.0.0"
+    rmc-picker "~5.0.0"
+    rmc-tabs "~1.2.0"
+    rn-topview "^0.1.6"
+
 antd-mobile@^2.1.8:
   version "2.1.8"
   resolved "https://registry.npmjs.org/antd-mobile/-/antd-mobile-2.1.8.tgz#054efda2105d9bf603a0730b8602a8fb21c81c02"
@@ -2458,6 +2477,13 @@ prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, pr
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+prop-types@^15.6.0:
+  version "15.6.2"
+  resolved "http://registry.npm.taobao.org/prop-types/download/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
+  dependencies:
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
@@ -2618,7 +2644,7 @@ react-native-drawer-layout@~1.3.0:
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
-react-native-elements@*, react-native-elements@^0.19.1:
+react-native-elements@*:
   version "0.19.1"
   resolved "https://registry.npmjs.org/react-native-elements/-/react-native-elements-0.19.1.tgz#f92b69d864a150215d01f81fe3c52a9cada83e45"
   dependencies:
@@ -2626,6 +2652,16 @@ react-native-elements@*, react-native-elements@^0.19.1:
     lodash.times "^4.3.2"
     opencollective "^1.0.3"
     prop-types "^15.5.8"
+
+react-native-elements@1.0.0-beta5:
+  version "1.0.0-beta5"
+  resolved "http://registry.npm.taobao.org/react-native-elements/download/react-native-elements-1.0.0-beta5.tgz#5445976c22bf5bc0a92b91ccb38dafacac966d2a"
+  dependencies:
+    lodash.isempty "^4.4.0"
+    lodash.times "^4.3.2"
+    opencollective "^1.0.3"
+    prop-types "^15.5.8"
+    react-native-touchable-scale "2.0.0"
 
 react-native-menu@^0.23.0:
   version "0.23.0"
@@ -2646,6 +2682,12 @@ react-native-swipeout@^2.2.2:
     create-react-class "^15.6.0"
     prop-types "^15.5.10"
     react-tween-state "^0.1.5"
+
+react-native-touchable-scale@2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/react-native-touchable-scale/download/react-native-touchable-scale-2.0.0.tgz#13a83a9423e46049cad3e3cc306eba2130883cb1"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-native-vector-icons@^4.6.0:
   version "4.6.0"
@@ -2891,6 +2933,13 @@ rmc-cascader@~5.0.0:
   resolved "https://registry.npmjs.org/rmc-cascader/-/rmc-cascader-5.0.0.tgz#f204e2b82a8344091409657fcf795702668b9cbe"
   dependencies:
     array-tree-filter "1.0.x"
+    babel-runtime "6.x"
+    rmc-picker "~5.0.0"
+
+rmc-date-picker@^6.0.8:
+  version "6.0.8"
+  resolved "http://registry.npm.taobao.org/rmc-date-picker/download/rmc-date-picker-6.0.8.tgz#9aab87b3aa8dc9c5a57349d8f0b05de4e8f4808a"
+  dependencies:
     babel-runtime "6.x"
     rmc-picker "~5.0.0"
 

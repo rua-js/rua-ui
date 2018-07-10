@@ -1,1 +1,1 @@
-import { Button } from 'react-native-elements'
+export { Button } from 'react-native-elements'
