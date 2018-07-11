@@ -10,12 +10,16 @@ class Text extends React.Component<TextProps, never>
       style,
       size,
       color,
+      weight,
+      family,
       ...restProps
     } = this.props
 
     const computedStyle = {
       color,
       fontSize: size,
+      fontWeight: weight,
+      fontFamily: family,
     }
 
     return (
@@ -39,6 +43,8 @@ export interface TextProps extends RNTextProps
 {
   color?: string
   size?: number
+  weight?: "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"
+  family?: string
 }
 
 export default Text
