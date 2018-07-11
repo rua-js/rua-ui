@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { View, ViewStyle } from 'react-native'
+import { ViewStyle } from 'react-native'
+import { View, ViewProps } from '../Primitives'
 
 export default class Column extends React.PureComponent<ColumnProps, any>
 {
@@ -42,7 +43,8 @@ export default class Column extends React.PureComponent<ColumnProps, any>
   }
 }
 
-export interface ColumnProps
+// @ts-ignore: we need to override some props from 'ViewProps' to achieve our design
+export interface ColumnProps extends ViewProps
 {
   center?: boolean
   middle?: boolean
