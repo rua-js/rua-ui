@@ -19,7 +19,7 @@ export default class Column extends React.PureComponent<ColumnProps, any>
       around,
       ...restProps
     } = this.props
-    const viewStyle: ViewStyle = style || {}
+    const viewStyle: ViewStyle = {}
 
     // horizontal
     if (left) viewStyle.alignItems = 'flex-start'
@@ -36,7 +36,7 @@ export default class Column extends React.PureComponent<ColumnProps, any>
     if (around) viewStyle.justifyContent = 'space-around'
 
     return (
-      <View style={viewStyle}{...restProps}>
+      <View style={[style, viewStyle]}{...restProps}>
         {children}
       </View>
     )

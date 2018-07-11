@@ -19,7 +19,7 @@ export default class Row extends React.PureComponent<RowProps, never>
       ...restProps
     } = this.props
 
-    const viewStyle: ViewStyle = style || {}
+    const viewStyle: ViewStyle = {}
 
     viewStyle.flexDirection = 'row'
 
@@ -38,7 +38,7 @@ export default class Row extends React.PureComponent<RowProps, never>
     if (around) viewStyle.justifyContent = 'space-around'
 
     return (
-      <View style={viewStyle} {...restProps}>
+      <View style={[style, viewStyle]} {...restProps}>
         {children}
       </View>
     )
