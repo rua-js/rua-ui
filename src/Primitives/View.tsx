@@ -1,28 +1,45 @@
 import * as React from 'react'
-import { StyleProp, View as RNView, ViewProps as RNViewProps, ViewStyle, } from 'react-native'
+import { StyleProp, View as RNView, ViewProps as RNViewProps, ViewStyle } from 'react-native'
 
 import { TouchableView, TouchableViewProps } from '../Internals'
 
+/**
+ *
+ * @class View
+ */
 class View extends React.Component<ViewProps, any>
 {
   /**
    * This methods checks if parent elements passed onClick into View
+   * NOTE: this is trying to fix Ant Design's onClick
    *
    * @returns {Function | any}
    */
   handlePress = () =>
   {
+    // object destruction
     const { onClick, onPress } = this.props
+
+    // call onClick first
+    // NOTE: onPress will be called if it's given
     if (onClick)
     {
       onClick()
     }
+
+    // call onPress if exists, then return the result
     return onPress && onPress()
   }
 
-  render()
+  /**
+   * We detect 'Press' events, and wrap them into 'TouchableView'
+   *
+   * @returns {JSX.Element}
+   */
+  render(): JSX.Element
   {
-    let {
+    // object destruction
+    const {
       style,
       onPress,
       onClick,
@@ -32,7 +49,7 @@ class View extends React.Component<ViewProps, any>
       ...restProps
     } = this.props
 
-    // Decide if should use Touchable
+    // Decide if should use 'Touchable'
     const shouldWrapInTouchableComponent =
       onClick ||
       onPress ||
@@ -40,14 +57,18 @@ class View extends React.Component<ViewProps, any>
       restProps.onPressIn ||
       restProps.onPressOut
 
-    if (!!shouldWrapInTouchableComponent) // Need wrap in Touchable
+    // When need wrap in 'Touchable'
+    if (!!shouldWrapInTouchableComponent)
     {
+      // default props will passed to 'View', touchableViewProps will passed to 'TouchableView'
+      // and viewProps will passed to 'View'
+      // todo: there is a bug on other 'Press' events, we need to pass to 'TouchableView'
       return (
         <TouchableView
-          {...touchableViewProps}
+          {...touchableViewProps} {...restProps}
           onPress={(onPress || onClick) && this.handlePress}
         >
-          <RNView style={style} {...viewProps} {...restProps}>
+          <RNView style={style} {...viewProps}>
             {children}
           </RNView>
         </TouchableView>
