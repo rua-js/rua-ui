@@ -1,22 +1,12 @@
 // Card
-import Card, { CardProps } from './Card'
+export { default as Card, CardProps } from './Card'
+export { default as Center, CenterProps } from './Center'
+export { default as Row, RowProps } from './Row'
+export { default as Column, ColumnProps } from './Column'
 
-import IconText from './IconText'
-import TextView, { TextViewProps } from './TextView'
-import ImageView, { ImageViewProps } from './ImageView'
-import Statistic, { StatisticProps } from './Statistic'
-import TextInputView from './TextInputView'
+export { default as IconText } from './IconText'
+export { default as TextView, TextViewProps } from './TextView'
+export { default as ImageView, ImageViewProps } from './ImageView'
+export { default as Statistic, StatisticProps } from './Statistic'
+export { default as TextInputView, TextInputViewProps } from './TextInputView'
 
-export {
-  IconText,
-  Card,
-  TextView,
-  ImageView,
-  Statistic,
-  TextInputView,
-  // Props,
-  CardProps,
-  TextViewProps,
-  ImageViewProps,
-  StatisticProps,
-}
