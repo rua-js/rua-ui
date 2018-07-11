@@ -6,7 +6,7 @@ import {
   StyleProp as RNStyleProp,
 } from 'react-native'
 
-import { Text, View, TextProps, ViewProps } from '../Primitives'
+import { Text, View, TextProps, ViewProps } from '../primitives'
 
 class TextView extends React.Component<TextViewProps, never>
 {

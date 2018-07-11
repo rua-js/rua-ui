@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ViewStyle } from 'react-native'
-import { View, ViewProps } from '../Primitives'
+import { View, ViewProps } from '../primitives'
 
 export default class Column extends React.PureComponent<ColumnProps, any>
 {

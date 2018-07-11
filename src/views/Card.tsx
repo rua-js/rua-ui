@@ -1,6 +1,6 @@
 import * as React from 'react'
-import View, { ViewProps } from '../Primitives/View'
-import { colors } from '../Configs'
+import View, { ViewProps } from '../primitives/View'
+import { colors } from '../configs'
 
 // Internal components
 import CardHeader from './CardHeader'

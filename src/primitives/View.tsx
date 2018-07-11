@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleProp, View as RNView, ViewProps as RNViewProps, ViewStyle } from 'react-native'
 
-import { TouchableView, TouchableViewProps } from '../Internals'
+import { TouchableView, TouchableViewProps } from '../internals'
 
 /**
  *

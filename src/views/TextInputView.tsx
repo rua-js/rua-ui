@@ -5,7 +5,7 @@ import {
   TextStyle as RNTextStyle,
   ViewStyle as RNViewStyle,
 } from 'react-native'
-import { TextInput, View, ViewProps } from '../Primitives'
+import { TextInput, View, ViewProps } from '../primitives'
 
 class TextInputView extends React.Component<TextInputViewProps, never>
 {

@@ -7,7 +7,7 @@ import {
   StyleSheet,
   ViewStyle as RNViewStyle,
 } from 'react-native'
-import { View, ViewProps } from '../Primitives'
+import { View, ViewProps } from '../primitives'
 
 class ImageView extends React.Component<ImageViewProps, any>
 {

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ViewStyle } from 'react-native'
-import { View } from '../Primitives'
+import { View } from '../primitives'
 
 export default class Center extends React.PureComponent<CenterProps, any>
 {

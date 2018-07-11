@@ -6,9 +6,9 @@ import {
   TextStyle as RNTextStyle,
 } from 'react-native'
 
-import { TextProps, View, ViewProps } from '../Primitives'
+import { TextProps, View, ViewProps } from '../primitives'
 import { TextView } from './'
-import { Space } from '../Elements'
+import { Space } from '../elements'
 
 class Statistic extends React.Component<StatisticProps, never>
 {

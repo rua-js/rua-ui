@@ -1,4 +1,4 @@
-// Elements
+// elements
 export {
   Border,
   Button,
@@ -8,8 +8,8 @@ export {
   Icon,
   Divider,
   Avatar
-} from './Elements'
-// Primitives
+} from './elements'
+// primitives
 export {
   Text,
   TextProps,
@@ -19,8 +19,8 @@ export {
   TextInputProps,
   Image,
   ScrollView,
-} from './Primitives'
-// Views
+} from './primitives'
+// views
 export {
   Card,
   IconText,
@@ -31,8 +31,8 @@ export {
   Center,
   Column,
   Row,
-} from './Views'
+} from './views'
 // Data Entry
-export { Picker } from './DataEntries'
-// Helpers
-export { Repeat, PlaceHolder } from './Helpers'
+export { Picker } from './data-entry'
+// helpers
+export { Repeat, PlaceHolder } from './helpers'

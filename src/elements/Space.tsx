@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { View, ViewStyle } from 'react-native'
-import { ViewProps } from '../Primitives'
+import { ViewProps } from '../primitives'
 
 class Space extends React.Component<SpaceProps, never>
 {

@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { StyleSheet, TextStyle, View } from 'react-native'
-import { TouchableView } from '../Internals'
-import { Text } from '../Primitives'
-import { Space } from '../Elements'
+import { TouchableView } from '../internals'
+import { Text } from '../primitives'
+import { Space } from '../elements'
 // material
 import { default as EntypoIcon } from 'react-native-vector-icons/Entypo'
 import { default as EvilIconsIcon } from 'react-native-vector-icons/EvilIcons'
