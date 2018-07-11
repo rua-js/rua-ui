@@ -4,7 +4,7 @@ export {
   Button,
   Container,
   Space,
-  SpaceProps,
+  // SpaceProps,
   Icon,
   Divider,
   Avatar
@@ -21,7 +21,17 @@ export {
   ScrollView,
 } from './Primitives'
 // Views
-export { Card, IconText, TextView, ImageView, Statistic, TextInputView } from './Views'
+export {
+  Card,
+  IconText,
+  TextView,
+  ImageView,
+  Statistic,
+  TextInputView,
+  Center,
+  Column,
+  Row,
+} from './Views'
 // Data Entry
 export { Picker } from './DataEntries'
 // Helpers
