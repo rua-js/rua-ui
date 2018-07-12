@@ -5,7 +5,7 @@ import { colors } from '../configs'
 // Internal components
 import CardHeader from './CardHeader'
 
-class Card extends React.Component<CardProps, never>
+class Card extends React.PureComponent<CardProps, never>
 {
 
   static Header = CardHeader

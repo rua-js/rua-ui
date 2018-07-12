@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import { View, ViewProps } from '../primitives'
 
-class ImageView extends React.Component<ImageViewProps, any>
+class ImageView extends React.PureComponent<ImageViewProps, any>
 {
   render()
   {

@@ -8,7 +8,7 @@ import {
 
 import { Text, View, TextProps, ViewProps } from '../primitives'
 
-class TextView extends React.Component<TextViewProps, never>
+class TextView extends React.PureComponent<TextViewProps, never>
 {
   static defaultProps = {
     viewStyle: {},

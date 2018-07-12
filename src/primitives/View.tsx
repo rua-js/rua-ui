@@ -7,7 +7,7 @@ import { TouchableView, TouchableViewProps } from '../internals'
  *
  * @class View
  */
-class View extends React.Component<ViewProps, any>
+class View extends React.PureComponent<ViewProps, any>
 {
   /**
    * This methods checks if parent elements passed onClick into View

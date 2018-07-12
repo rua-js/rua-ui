@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export default class Repeat extends React.Component<RepeatProps, never>
+export default class Repeat extends React.PureComponent<RepeatProps, never>
 {
   render()
   {

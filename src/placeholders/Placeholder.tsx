@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
 
-class Placeholder extends React.Component<Props, never> {
+class Placeholder extends React.PureComponent<Props, never> {
 
   static defaultProps = {
     height: 100,

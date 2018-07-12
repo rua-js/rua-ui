@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View, StyleSheet } from 'react-native'
 
-class Container extends React.Component<Props, never> {
+class Container extends React.PureComponent<Props, never> {
   render() {
     const { children } = this.props
     return (

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
 import { colors } from '../configs'
 
-class Divider extends React.Component<DividerProps, never> {
+class Divider extends React.PureComponent<DividerProps, never> {
 
   static defaultProps = {
     color: colors.border,

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { View, Text, ViewProps } from '../primitives'
 import { StyleSheet, ViewStyle } from 'react-native'
 
-class CardHeader extends React.Component<CardHeaderProps, never>
+class CardHeader extends React.PureComponent<CardHeaderProps, never>
 {
 
   render()

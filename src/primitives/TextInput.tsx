@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet, TextInput as RNTextInput, TextProps as RNTextProps, } from 'react-native'
 
-class TextInput extends React.Component<TextInputProps, never>
+class TextInput extends React.PureComponent<TextInputProps, never>
 {
   render()
   {

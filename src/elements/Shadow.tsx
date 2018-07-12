@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
 
-class Shadow extends React.Component {
+class Shadow extends React.PureComponent {
   render() {
     return (
       <View></View>

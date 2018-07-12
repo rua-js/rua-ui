@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet, View } from 'react-native'
 
-export default class Placeholder extends React.Component<PlaceholderProps, never>
+export default class Placeholder extends React.PureComponent<PlaceholderProps, never>
 {
 
   static defaultProps = {

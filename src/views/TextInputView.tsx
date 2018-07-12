@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import { TextInput, View, ViewProps } from '../primitives'
 
-class TextInputView extends React.Component<TextInputViewProps, never>
+class TextInputView extends React.PureComponent<TextInputViewProps, never>
 {
   render()
   {

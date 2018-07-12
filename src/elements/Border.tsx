@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet, View } from 'react-native'
 
-class Border extends React.Component<BorderProps, never>
+class Border extends React.PureComponent<BorderProps, never>
 {
 
   render()

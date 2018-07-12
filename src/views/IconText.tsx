@@ -28,7 +28,7 @@ const iconComponents = {
   simpleLine: SimpleLineIconsIcon,
 }
 
-class IconText extends React.Component<Props, never>
+class IconText extends React.PureComponent<Props, never>
 {
 
   static defaultProps = {

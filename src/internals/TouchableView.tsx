@@ -1,19 +1,22 @@
 import * as React from 'react'
 // @ts-ignore: no define
-import Touchable from 'react-native-platform-touchable';
+import Touchable from 'react-native-platform-touchable'
 
-class TouchableView extends React.Component<any, never> {
+class TouchableView extends React.PureComponent<any, never>
+{
 
   static defaultProps = {
-    underlayColor: '#ddd'
+    underlayColor: '#ddd',
   }
 
-  render() {
-    const { children, underlayColor, ...props } = this.props
+  render()
+  {
+    const { children, underlayColor, ...restProps } = this.props
+
     return (
       <Touchable
         underlayColor={underlayColor}
-        {...props}
+        {...restProps}
       >
         {children}
       </Touchable>
@@ -23,7 +26,7 @@ class TouchableView extends React.Component<any, never> {
 
 export interface TouchableViewProps
 {
-  [key: string]: any
+  [ key: string ]: any
 }
 
 export default TouchableView

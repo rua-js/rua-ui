@@ -2,7 +2,7 @@ import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
 import Placeholder from './Placeholder'
 
-class SquarePlaceholder extends React.Component<Props, never> {
+class SquarePlaceholder extends React.PureComponent<Props, never> {
 
   static defaultProps = {
     size: 100,

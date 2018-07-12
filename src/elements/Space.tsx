@@ -2,7 +2,7 @@ import * as React from 'react'
 import { View, ViewStyle } from 'react-native'
 import { ViewProps } from '../primitives'
 
-class Space extends React.Component<SpaceProps, never>
+class Space extends React.PureComponent<SpaceProps, never>
 {
 
   static defaultProps = {

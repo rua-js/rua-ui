@@ -10,7 +10,7 @@ import { TextProps, View, ViewProps } from '../primitives'
 import { TextView } from './'
 import { Space } from '../elements'
 
-class Statistic extends React.Component<StatisticProps, never>
+class Statistic extends React.PureComponent<StatisticProps, never>
 {
   static defaultProps = {
     spaceSize: 5,
