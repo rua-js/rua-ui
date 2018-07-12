@@ -7,7 +7,7 @@ export {
   // SpaceProps,
   Icon,
   Divider,
-  Avatar
+  Avatar,
 } from './elements'
 // primitives
 export {
@@ -36,3 +36,5 @@ export {
 export { Picker } from './data-entry'
 // helpers
 export { Repeat, PlaceHolder } from './helpers'
+
+export { Fluid } from './layouts'
