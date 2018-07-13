@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest test.ts --coverage",
-    "build": "rm -rf ./lib && tsc || post-build",
+    "build": "rm -rf ./lib && tsc && post-build",
     "post-build": "node ./scripts/release/move-dts.js"
   },
   "repository": {
