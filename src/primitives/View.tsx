@@ -62,7 +62,6 @@ class View extends React.PureComponent<ViewProps, any>
     {
       // default props will passed to 'View', touchableViewProps will passed to 'TouchableView'
       // and viewProps will passed to 'View'
-      // todo: there is a bug on other 'Press' events, we need to pass to 'TouchableView'
       return (
         <TouchableView
           style={style}
