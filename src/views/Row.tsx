@@ -38,7 +38,7 @@ export default class Row extends React.PureComponent<RowProps, never>
     if (around) viewStyle.justifyContent = 'space-around'
 
     return (
-      <View style={[style, viewStyle]} {...restProps}>
+      <View style={[viewStyle].concat(style)} {...restProps}>
         {children}
       </View>
     )
