@@ -36,7 +36,10 @@ export default class Column extends React.PureComponent<ColumnProps, any>
     if (around) viewStyle.justifyContent = 'space-around'
 
     return (
-      <View style={[style, viewStyle]}{...restProps}>
+      <View
+        style={[viewStyle].concat(style)}
+        {...restProps}
+      >
         {children}
       </View>
     )
