@@ -65,10 +65,12 @@ class View extends React.PureComponent<ViewProps, any>
       // todo: there is a bug on other 'Press' events, we need to pass to 'TouchableView'
       return (
         <TouchableView
-          {...touchableViewProps} {...restProps}
+          style={style}
+          {...touchableViewProps}
+          {...restProps}
           onPress={(onPress || onClick) && this.handlePress}
         >
-          <RNView style={style} {...viewProps}>
+          <RNView {...viewProps}>
             {children}
           </RNView>
         </TouchableView>
