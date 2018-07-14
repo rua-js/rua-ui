@@ -1,7 +1,12 @@
 import * as React from 'react'
-import { StyleProp, View as RNView, ViewProps as RNViewProps, ViewStyle } from 'react-native'
+import {
+  View as RNView,
+  ViewProps as RNViewProps,
+  TouchableOpacityProps,
+  TouchableNativeFeedback,
+} from 'react-native'
 
-import { TouchableView, TouchableViewProps } from '../internals'
+import { TouchableView } from '../internals'
 
 /**
  *
@@ -15,7 +20,7 @@ class View extends React.PureComponent<ViewProps, any>
    *
    * @returns {Function | any}
    */
-  handlePress = () =>
+  handlePress = (e) =>
   {
     // object destruction
     const { onClick, onPress } = this.props
@@ -28,7 +33,7 @@ class View extends React.PureComponent<ViewProps, any>
     }
 
     // call onPress if exists, then return the result
-    return onPress && onPress()
+    return onPress && onPress(e)
   }
 
   /**
@@ -40,12 +45,9 @@ class View extends React.PureComponent<ViewProps, any>
   {
     // object destruction
     const {
-      style,
       onPress,
       onClick,
       children,
-      viewProps,
-      touchableViewProps,
       ...restProps
     } = this.props
 
@@ -64,41 +66,29 @@ class View extends React.PureComponent<ViewProps, any>
       // and viewProps will passed to 'View'
       return (
         <TouchableView
-          style={style}
-          {...touchableViewProps}
           {...restProps}
-          onPress={(onPress || onClick) && this.handlePress}
+          onPress={(onPress || onClick) ? this.handlePress : null}
         >
-          <RNView {...viewProps}>
-            {children}
-          </RNView>
+          {children}
         </TouchableView>
       )
-    } else // No need wrap in Touchable
-    {
-      return (
-        <RNView style={style} {...viewProps} {...restProps}>
-          {children}
-        </RNView>
-      )
     }
+    // No need wrap in Touchable
+    return (
+      <RNView {...restProps}>
+        {children}
+      </RNView>
+    )
   }
 }
 
-
-export interface ViewProps extends RNViewProps
+export interface ViewProps extends RNViewProps,
+  TouchableOpacityProps,
+  TouchableNativeFeedback
 {
-  style?: StyleProp<ViewStyle>
-  touchableViewStyle?: TouchableViewProps
-  children?: React.ReactNode
-  viewProps?: RNViewProps
-  touchableViewProps?: TouchableViewProps
-  // Touchable
-  onPress?: Function
-  onLongPress?: Function
-  onPressIn?: Function
-  onPressOut?: Function
   onClick?: Function
+
+  [key: string]: any
 }
 
 export default View
