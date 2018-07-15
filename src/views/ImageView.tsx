@@ -14,7 +14,7 @@ class ImageView extends React.PureComponent<ImageViewProps, any>
   render()
   {
     const {
-      containerProps,
+      containerViewProps,
       containerViewStyle,
       imageProps,
       imageStyle,
@@ -23,7 +23,7 @@ class ImageView extends React.PureComponent<ImageViewProps, any>
 
     return (
       <View
-        {...containerProps}
+        {...containerViewProps}
         style={containerViewStyle}
       >
         <RNImage
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 
 export interface ImageViewProps
 {
-  containerProps?: ViewProps
+  containerViewProps?: ViewProps
   containerViewStyle?: StyleProp<RNViewStyle>
   imageProps?: RNImageProps
   imageStyle?: StyleProp<RNImageStyle>

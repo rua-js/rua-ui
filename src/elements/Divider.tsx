@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
-import { colors } from '../configs'
+import { colors } from '../shared'
 
 class Divider extends React.PureComponent<DividerProps, never> {
 
