@@ -1,7 +1,10 @@
 import * as React from 'react'
-import { Image as RNImage, ImageProps as RNImageProps, ViewStyle } from 'react-native'
+import { Image as RNImage, ImageProps as RNImageProps, ViewStyle, ImageBackground } from 'react-native'
 import { default as View, ViewProps } from './View'
+import { TouchableView } from '../internals'
 import { utils } from '../shared'
+
+const { shouldUseTouchable } = utils
 
 export default class Image extends React.PureComponent<ImageProps, any>
 {
@@ -30,15 +33,41 @@ export default class Image extends React.PureComponent<ImageProps, any>
 
   render()
   {
-    // const { wi } = this.props
-    //
-    // if ()
-    return (
-      <View>
+    const { children, ...restProps } = this.props
+
+    const useTouchable = shouldUseTouchable(this.props)
+
+    if (children)
+    {
+      if (useTouchable)
+      {
+        return (
+          <ImageBackground {...restProps}>
+            {children}
+          </ImageBackground>
+        )
+      }
+
+      return (
+        <ImageBackground {...restProps}>
+          {children}
+        </ImageBackground>
+      )
+    }
+
+    if (useTouchable)
+    {
+      return (
         <RNImage
           {...this.props}
         />
-      </View>
+      )
+    }
+
+    return (
+      <RNImage
+        {...this.props}
+      />
     )
   }
 }
@@ -48,7 +77,7 @@ export interface ImageProps extends RNImageProps
   touchableStyle?: ViewStyle
   touchableProps?: ViewProps
   children?: JSX.Element | JSX.Element[]
-
+  size?: number | string
   // Touchable
   onPress?: Function
   onLongPress?: Function
