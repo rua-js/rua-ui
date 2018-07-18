@@ -19,6 +19,7 @@ export default class Column extends React.PureComponent<ColumnProps, any>
       around,
       ...restProps
     } = this.props
+
     const viewStyle: ViewStyle = {}
 
     // horizontal

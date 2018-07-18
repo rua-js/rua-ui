@@ -1,7 +1,5 @@
 import * as React from 'react'
-import { Image as RNImage, ImageProps as RNImageProps, ViewStyle, ImageBackground } from 'react-native'
-import { default as View, ViewProps } from './View'
-import { TouchableView } from '../internals'
+import { Image as RNImage, ImageBackground, ImageProps as RNImageProps, ImageStyle, StyleProp } from 'react-native'
 import { utils } from '../shared'
 
 const { shouldUseTouchable } = utils
@@ -33,23 +31,38 @@ export default class Image extends React.PureComponent<ImageProps, any>
 
   render()
   {
-    const { children, ...restProps } = this.props
+    const { children, style, size, ...restProps } = this.props
 
     const useTouchable = shouldUseTouchable(this.props)
+
+    // fix hint error
+    const imageStyle: any = {}
+
+    if (size)
+    {
+      imageStyle.height = size
+      imageStyle.width = size
+    }
 
     if (children)
     {
       if (useTouchable)
       {
         return (
-          <ImageBackground {...restProps}>
+          <ImageBackground
+            style={[imageStyle].concat(style)}
+            {...restProps}
+          >
             {children}
           </ImageBackground>
         )
       }
 
       return (
-        <ImageBackground {...restProps}>
+        <ImageBackground
+          style={[imageStyle].concat(style)}
+          {...restProps}
+        >
           {children}
         </ImageBackground>
       )
@@ -59,6 +72,7 @@ export default class Image extends React.PureComponent<ImageProps, any>
     {
       return (
         <RNImage
+          style={[imageStyle].concat(style)}
           {...this.props}
         />
       )
@@ -66,6 +80,7 @@ export default class Image extends React.PureComponent<ImageProps, any>
 
     return (
       <RNImage
+        style={[imageStyle].concat(style)}
         {...this.props}
       />
     )
@@ -74,8 +89,6 @@ export default class Image extends React.PureComponent<ImageProps, any>
 
 export interface ImageProps extends RNImageProps
 {
-  touchableStyle?: ViewStyle
-  touchableProps?: ViewProps
   children?: JSX.Element | JSX.Element[]
   size?: number | string
   // Touchable

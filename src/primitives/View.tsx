@@ -82,9 +82,7 @@ class View extends React.PureComponent<ViewProps, any>
   }
 }
 
-export interface ViewProps extends RNViewProps,
-  TouchableOpacityProps,
-  TouchableNativeFeedback
+export interface ViewProps extends RNViewProps
 {
   onClick?: Function
 

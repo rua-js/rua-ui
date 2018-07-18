@@ -1,5 +1,6 @@
 import * as React from 'react'
-import {View, ViewProps, ViewStyle} from 'react-native'
+import { ViewStyle } from 'react-native'
+import { View, ViewProps } from '../primitives'
 
 export default class Row extends React.PureComponent<RowProps, never>
 {
