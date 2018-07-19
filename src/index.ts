@@ -35,4 +35,10 @@ export { Picker } from './data-entry'
 // helpers
 export { Repeat, PlaceHolder } from './helpers'
 
-export { Fluid, Row, Column } from './layouts'
+export {
+  Fluid,
+  Row,
+  RowProps,
+  Column,
+  ColumnProps,
+} from './layouts'
