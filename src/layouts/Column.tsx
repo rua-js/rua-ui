@@ -16,7 +16,7 @@ export default function Column(props: ColumnProps)
     between,
     around,
     ...restProps
-  } = this.props
+  } = props
 
   const viewStyle: ViewStyle = {}
 

@@ -16,7 +16,7 @@ export default function Row(props: RowProps)
     between,
     around,
     ...restProps
-  } = this.props
+  } = props
 
   const viewStyle: ViewStyle = {}
 
