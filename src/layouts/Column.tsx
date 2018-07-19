@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ViewStyle } from 'react-native'
 import { View, ViewProps } from '../primitives'
 
-export default function Row(props: RowProps)
+export default function Column(props: ColumnProps)
 {
   const {
     center,
@@ -20,31 +20,32 @@ export default function Row(props: RowProps)
 
   const viewStyle: ViewStyle = {}
 
-  viewStyle.flexDirection = 'row'
-
   // horizontal
-  if (left) viewStyle.justifyContent = 'flex-start'
-  if (center) viewStyle.justifyContent = 'center'
-  if (right) viewStyle.justifyContent = 'flex-end'
+  if (left) viewStyle.alignItems = 'flex-start'
+  if (center) viewStyle.alignItems = 'center'
+  if (right) viewStyle.alignItems = 'flex-end'
 
   // vertical
-  if (top) viewStyle.alignItems = 'flex-start'
-  if (middle) viewStyle.alignItems = 'center'
-  if (bottom) viewStyle.alignItems = 'flex-end'
+  if (top) viewStyle.justifyContent = 'flex-start'
+  if (middle) viewStyle.justifyContent = 'center'
+  if (bottom) viewStyle.justifyContent = 'flex-end'
 
   // main axis
   if (between) viewStyle.justifyContent = 'space-between'
   if (around) viewStyle.justifyContent = 'space-around'
 
   return (
-    <View style={[viewStyle].concat(style)} {...restProps}>
+    <View
+      style={[viewStyle].concat(style)}
+      {...restProps}
+    >
       {children}
     </View>
   )
 }
 
 // @ts-ignore: we need to override some props from 'ViewProps' to achieve our design
-export interface RowProps extends ViewProps
+export interface ColumnProps extends ViewProps
 {
   center?: boolean
   middle?: boolean

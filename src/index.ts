@@ -29,12 +29,10 @@ export {
   Statistic,
   TextInputView,
   Center,
-  Column,
-  Row,
 } from './views'
 // Data Entry
 export { Picker } from './data-entry'
 // helpers
 export { Repeat, PlaceHolder } from './helpers'
 
-export { Fluid } from './layouts'
+export { Fluid, Row, Column } from './layouts'
