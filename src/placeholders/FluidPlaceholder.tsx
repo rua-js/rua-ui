@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   container: {},
 })
 
-interface Props {
+export interface Props {
   color?: string
 }
 
