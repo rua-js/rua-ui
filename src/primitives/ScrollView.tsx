@@ -1,3 +1,16 @@
-import { ScrollView, ScrollViewStatic } from 'react-native'
+import * as React from 'react'
+import {
+  ScrollView as RNScrollView,
+  ScrollViewProps as RNScrollViewProps,
+} from 'react-native'
 
-export default ScrollView as ScrollViewStatic
+export default function ScrollView(props: RNScrollViewProps)
+{
+  return (
+    <RNScrollView
+      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
+      {...props}
+    />
+  )
+}
