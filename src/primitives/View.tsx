@@ -1,32 +1,31 @@
 import * as React from 'react'
-import {
-  View as RNView,
-  ViewProps as RNViewProps,
-  TouchableOpacityProps,
-  TouchableNativeFeedback,
-} from 'react-native'
+import { View as RNView, ViewProps as RNViewProps } from 'react-native'
 
 import { TouchableView } from '../internals'
 
 /**
+ * Enhanced View Component
  *
- * @class View
+ * @param {ViewProps} props
+ * @returns {any}
+ * @constructor
  */
-class View extends React.PureComponent<ViewProps, any>
+export default function View(props: ViewProps)
 {
+  const { onPress, onClick, children, ...restProps } = props
+
   /**
    * This methods checks if parent elements passed onClick into View
    * NOTE: this is trying to fix Ant Design's onClick
    *
    * @returns {Function | any}
    */
-  handlePress = (e) =>
+  function handlePress(e)
   {
-    // object destruction
-    const { onClick, onPress } = this.props
+    const { onPress, onClick } = props
 
-    // call onClick first
-    // NOTE: onPress will be called if it's given
+    // call onClick first if onClick is given
+    // NOTE: onPress will still be called if it's given
     if (onClick)
     {
       onClick()
@@ -36,50 +35,34 @@ class View extends React.PureComponent<ViewProps, any>
     return onPress && onPress(e)
   }
 
-  /**
-   * We detect 'Press' events, and wrap them into 'TouchableView'
-   *
-   * @returns {JSX.Element}
-   */
-  render(): JSX.Element
+  // Decide if should use 'Touchable'
+  const shouldWrapInTouchableComponent =
+    onClick ||
+    onPress ||
+    restProps.onLongPress ||
+    restProps.onPressIn ||
+    restProps.onPressOut
+
+  // When need wrap in 'Touchable'
+  if (!!shouldWrapInTouchableComponent)
   {
-    // object destruction
-    const {
-      onPress,
-      onClick,
-      children,
-      ...restProps
-    } = this.props
-
-    // Decide if should use 'Touchable'
-    const shouldWrapInTouchableComponent =
-      onClick ||
-      onPress ||
-      restProps.onLongPress ||
-      restProps.onPressIn ||
-      restProps.onPressOut
-
-    // When need wrap in 'Touchable'
-    if (!!shouldWrapInTouchableComponent)
-    {
-      // default props will passed to 'View', touchableViewProps will passed to 'TouchableView'
-      // and viewProps will passed to 'View'
-      return (
-        <TouchableView
-          {...restProps}
-          onPress={(onPress || onClick) ? this.handlePress : null}
-        >
-          {children}
-        </TouchableView>
-      )
-    }
-    // No need wrap in Touchable
+    // default props will passed to 'View', touchableViewProps will passed to 'TouchableView'
+    // and viewProps will passed to 'View'
     return (
-      <RNView {...restProps}>
+      <TouchableView
+        {...restProps}
+        onPress={(onPress || onClick) ? handlePress : null}
+      >
         {children}
-      </RNView>
+      </TouchableView>
     )
   }
+  // No need wrap in Touchable
+  return (
+    <RNView {...restProps}>
+      {children}
+    </RNView>
+  )
 }
 
 export interface ViewProps extends RNViewProps
@@ -88,5 +71,3 @@ export interface ViewProps extends RNViewProps
 
   [key: string]: any
 }
-
-export default View
