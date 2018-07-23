@@ -15,6 +15,7 @@ export default function Row(props: RowProps)
     bottom,
     between,
     around,
+    evenly,
     ...restProps
   } = props
 
@@ -35,6 +36,7 @@ export default function Row(props: RowProps)
   // main axis
   if (between) viewStyle.justifyContent = 'space-between'
   if (around) viewStyle.justifyContent = 'space-around'
+  if (evenly) viewStyle.justifyContent = 'space-evenly'
 
   return (
     <View style={[viewStyle].concat(style)} {...restProps}>
@@ -54,5 +56,6 @@ export interface RowProps extends ViewProps
   bottom?: boolean
   between?: boolean
   around?: boolean
+  evenly?: boolean
   style?: ViewStyle
 }

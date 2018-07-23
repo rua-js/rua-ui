@@ -15,6 +15,7 @@ export default function Column(props: ColumnProps)
     bottom,
     between,
     around,
+    evenly,
     ...restProps
   } = props
 
@@ -33,6 +34,7 @@ export default function Column(props: ColumnProps)
   // main axis
   if (between) viewStyle.justifyContent = 'space-between'
   if (around) viewStyle.justifyContent = 'space-around'
+  if (evenly) viewStyle.justifyContent = 'space-evenly'
 
   return (
     <View
@@ -55,5 +57,6 @@ export interface ColumnProps extends ViewProps
   bottom?: boolean
   between?: boolean
   around?: boolean
+  evenly?: boolean
   style?: ViewStyle
 }
