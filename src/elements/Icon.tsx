@@ -56,7 +56,7 @@ class Icon extends React.PureComponent<IconProps, any>
 interface IconProps
 {
   name: string
-  set: string
+  set?: string
   color?: string
   size?: number
   style?: any
