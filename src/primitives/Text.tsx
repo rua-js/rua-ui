@@ -7,8 +7,8 @@ export default function Text(props: TextProps)
     // @ts-ignore
     children,
     style,
-    size,
-    color,
+    size = 14,
+    color = '#1b1b1b',
     weight,
     family,
     lineHeight,
@@ -25,7 +25,7 @@ export default function Text(props: TextProps)
 
   return (
     <RNText
-      style={[styles.textDefault, computedStyle].concat(style as any)}
+      style={[computedStyle].concat(style as any)}
       {...restProps}
     >
       {children}
@@ -34,9 +34,6 @@ export default function Text(props: TextProps)
 }
 
 const styles = StyleSheet.create({
-  textDefault: {
-    color: '#1b1b1b',
-  },
 })
 
 export interface TextProps extends RNTextProps
