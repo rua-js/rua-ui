@@ -1,13 +1,10 @@
 // elements
 export {
-  Border,
-  Button,
   Container,
   Space,
   // SpaceProps,
   Icon,
   Divider,
-  Avatar,
 } from './elements'
 // primitives
 export {
