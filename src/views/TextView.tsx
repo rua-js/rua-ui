@@ -10,11 +10,6 @@ import { Text, View, TextProps, ViewProps } from '../primitives'
 
 class TextView extends React.PureComponent<TextViewProps, never>
 {
-  static defaultProps = {
-    viewStyle: {},
-    textStyle: {},
-  }
-
   render()
   {
     const {
@@ -22,12 +17,14 @@ class TextView extends React.PureComponent<TextViewProps, never>
       viewProps,
       textStyle,
       textProps,
-      children
+      children,
+      ...restProps
     } = this.props
     return (
       <View
         style={viewStyle}
         {...viewProps}
+        {...restProps}
       >
         <Text
           style={textStyle}
@@ -38,7 +35,7 @@ class TextView extends React.PureComponent<TextViewProps, never>
   }
 }
 
-export interface TextViewProps
+export interface TextViewProps extends ViewProps
 {
   viewStyle?: RNStyleProp<RNViewStyle>
   viewProps?: ViewProps
