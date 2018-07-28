@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View as RNView, ViewProps as RNViewProps } from 'react-native'
+import { View as RNView, ViewProps as RNViewProps, ViewStyle, StyleProp } from 'react-native'
 
 import { TouchableView } from '../internals'
 
@@ -12,7 +12,7 @@ import { TouchableView } from '../internals'
  */
 export default function View(props: ViewProps)
 {
-  const { onPress, onClick, children, ...restProps } = props
+  const { onPress, onClick, fill, fluid, style, children, ...restProps } = props
   /**
    * This methods checks if parent elements passed onClick into View
    * NOTE: this is trying to fix Ant Design's onClick
@@ -40,6 +40,22 @@ export default function View(props: ViewProps)
     restProps.onPressIn ||
     restProps.onPressOut
 
+  // Apply fluid and fill style
+  const viewStyle: StyleProp<ViewStyle> = {}
+
+  if (fill)
+  {
+    viewStyle.height = '100%'
+    viewStyle.width = '100%'
+  }
+
+  if (fluid)
+  {
+    viewStyle.flex = 1
+  }
+
+  const mergedStyles = [viewStyle].concat(style as any)
+
   // When need wrap in 'Touchable'
   if (!!shouldWrapInTouchableComponent)
   {
@@ -47,8 +63,9 @@ export default function View(props: ViewProps)
     // and viewProps will passed to 'View'
     return (
       <TouchableView
-        {...restProps}
+        style={mergedStyles}
         onPress={(onPress || onClick) ? handlePress : null}
+        {...restProps}
       >
         {children}
       </TouchableView>
@@ -56,7 +73,10 @@ export default function View(props: ViewProps)
   }
   // No need wrap in Touchable
   return (
-    <RNView {...restProps}>
+    <RNView
+      style={mergedStyles}
+      {...restProps}
+    >
       {children}
     </RNView>
   )
