@@ -13,7 +13,6 @@ import { TouchableView } from '../internals'
 export default function View(props: ViewProps)
 {
   const { onPress, onClick, children, ...restProps } = props
-
   /**
    * This methods checks if parent elements passed onClick into View
    * NOTE: this is trying to fix Ant Design's onClick
@@ -22,8 +21,6 @@ export default function View(props: ViewProps)
    */
   function handlePress(e)
   {
-    const { onPress, onClick } = props
-
     // call onClick first if onClick is given
     // NOTE: onPress will still be called if it's given
     if (onClick)
@@ -68,6 +65,10 @@ export default function View(props: ViewProps)
 export interface ViewProps extends RNViewProps
 {
   onClick?: Function
+
+  fill?: boolean
+
+  fluid?: boolean
 
   [key: string]: any
 }
