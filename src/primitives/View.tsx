@@ -84,11 +84,23 @@ export default function View(props: ViewProps)
 
 export interface ViewProps extends RNViewProps
 {
+  /**
+   * Support browser's onClick event
+   */
   onClick?: Function
 
+  /**
+   * Fill the whole parent content, which means 100% height and 100% width will be set
+   */
   fill?: boolean
 
+  /**
+   * Component fill the empty place like water (flex: 1)
+   */
   fluid?: boolean
 
+  /**
+   * Accept touchable required properties
+   */
   [key: string]: any
 }
