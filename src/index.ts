@@ -27,8 +27,6 @@ export {
   TextInputView,
   Center,
 } from './views'
-// Data Entry
-export { Picker } from './data-entry'
 // helpers
 export { Repeat, PlaceHolder } from './helpers'
 
