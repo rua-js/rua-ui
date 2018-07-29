@@ -1,25 +1,22 @@
 import * as React from 'react'
-import { ViewStyle } from 'react-native'
+import { ViewStyle, StyleProp } from 'react-native'
 import { View, ViewProps } from '../primitives'
 
-export default class Center extends React.PureComponent<CenterProps, any>
+export default function Center(props: CenterProps)
 {
-  render()
-  {
-    const { children } = this.props
+  const { children } = props
 
-    const viewStyle: ViewStyle = {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    }
-
-    return (
-      <View style={viewStyle}>
-        {children}
-      </View>
-    )
+  const viewStyle: StyleProp<ViewStyle> = {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   }
+
+  return (
+    <View style={viewStyle}>
+      {children}
+    </View>
+  )
 }
 
 export interface CenterProps extends ViewProps
