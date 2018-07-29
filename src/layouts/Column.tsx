@@ -5,6 +5,7 @@ import { View, ViewProps } from '../primitives'
 export default function Column(props: ColumnProps)
 {
   const {
+    reverse,
     center,
     middle,
     children,
@@ -19,7 +20,9 @@ export default function Column(props: ColumnProps)
     ...restProps
   } = props
 
-  const viewStyle: ViewStyle = {}
+  const viewStyle: ViewStyle = {
+    flexDirection: reverse ? 'column-reverse' : 'column',
+  }
 
   // horizontal
   if (left) viewStyle.alignItems = 'flex-start'
@@ -49,6 +52,7 @@ export default function Column(props: ColumnProps)
 // @ts-ignore: we need to override some props from 'ViewProps' to achieve our design
 export interface ColumnProps extends ViewProps
 {
+  reverse?: boolean
   center?: boolean
   middle?: boolean
   left?: boolean

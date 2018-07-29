@@ -16,12 +16,13 @@ export default function Row(props: RowProps)
     between,
     around,
     evenly,
+    reverse,
     ...restProps
   } = props
 
-  const viewStyle: ViewStyle = {}
-
-  viewStyle.flexDirection = 'row'
+  const viewStyle: ViewStyle = {
+    flexDirection: reverse ? 'row-reverse' : 'row',
+  }
 
   // horizontal
   if (left) viewStyle.justifyContent = 'flex-start'
@@ -48,6 +49,7 @@ export default function Row(props: RowProps)
 // @ts-ignore: we need to override some props from 'ViewProps' to achieve our design
 export interface RowProps extends ViewProps
 {
+  reverse?: boolean
   center?: boolean
   middle?: boolean
   left?: boolean
