@@ -1,13 +1,18 @@
 import * as React from 'react'
 import { View, StyleSheet } from 'react-native'
 
-class Container extends React.PureComponent<Props, never> {
-  render() {
-    const { children } = this.props
+class Container extends React.PureComponent<ContainerProps, never>
+{
+  render()
+  {
+    const { children, ...restProps } = this.props
     return (
-      <div className={'container'}>
+      <View
+        style={styles.container}
+        {...restProps}
+      >
         {children}
-      </div>
+      </View>
     )
   }
 }
@@ -15,10 +20,12 @@ class Container extends React.PureComponent<Props, never> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: '100%',
   },
 })
 
-interface Props {
+export interface ContainerProps
+{
 
 }
 
