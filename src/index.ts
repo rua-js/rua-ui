@@ -16,6 +16,8 @@ export {
   TextInputProps,
   Image,
   ScrollView,
+  ScrollViewProps,
+  ImageProps,
 } from './primitives'
 // views
 export {

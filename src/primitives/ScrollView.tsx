@@ -14,3 +14,5 @@ export default function ScrollView(props: RNScrollViewProps)
     />
   )
 }
+
+export interface ScrollViewProps extends RNScrollViewProps {}
