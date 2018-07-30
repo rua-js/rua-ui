@@ -5,6 +5,7 @@ import { View, ViewProps } from '../primitives'
 export default function Row(props: RowProps)
 {
   const {
+    reverse,
     center,
     middle,
     children,
@@ -16,7 +17,6 @@ export default function Row(props: RowProps)
     between,
     around,
     evenly,
-    reverse,
     ...restProps
   } = props
 
