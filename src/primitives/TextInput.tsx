@@ -1,23 +1,20 @@
 import * as React from 'react'
-import { StyleSheet, TextInput as RNTextInput, TextInputProps as RNTextInputProps, } from 'react-native'
+import { StyleSheet, TextInput as RNTextInput, TextInputProps as RNTextInputProps } from 'react-native'
 
-class TextInput extends React.PureComponent<TextInputProps, never>
+function TextInput(props: TextInputProps)
 {
-  render()
-  {
-    const {
-      style,
-      ...restProps
-    } = this.props
+  const {
+    style,
+    ...restProps
+  } = props
 
-    return (
-      <RNTextInput
-        underlineColorAndroid={'transparent'}
-        style={[styles.textInputDefault, style]}
-        {...restProps}
-      />
-    )
-  }
+  return (
+    <RNTextInput
+      underlineColorAndroid={'transparent'}
+      style={[styles.textInputDefault, style]}
+      {...restProps}
+    />
+  )
 }
 
 const styles = StyleSheet.create({
