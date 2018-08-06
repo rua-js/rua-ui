@@ -33,8 +33,7 @@ export default function Text(props: TextProps)
   )
 }
 
-const styles = StyleSheet.create({
-})
+const styles = StyleSheet.create({})
 
 export interface TextProps extends RNTextProps
 {
@@ -43,4 +42,5 @@ export interface TextProps extends RNTextProps
   weight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   family?: string
   lineHeight?: number
+  children?: JSX.Element | JSX.Element[] | string | number
 }
