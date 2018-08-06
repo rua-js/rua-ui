@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, TextInput as RNTextInput, TextProps as RNTextProps, } from 'react-native'
+import { StyleSheet, TextInput as RNTextInput, TextInputProps as RNTextInputProps, } from 'react-native'
 
 class TextInput extends React.PureComponent<TextInputProps, never>
 {
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export interface TextInputProps extends RNTextProps
+export interface TextInputProps extends RNTextInputProps
 {
 }
 
