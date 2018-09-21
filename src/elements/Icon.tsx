@@ -24,7 +24,7 @@ const iconComponents = {
   simpleLine: SimpleLineIconsIcon,
 }
 
-class Icon extends React.PureComponent<IconProps, any>
+export default class Icon extends React.PureComponent<IconProps, any>
 {
   static defaultProps = {
     set: 'material',
@@ -61,5 +61,3 @@ interface IconProps
   size?: number
   style?: any
 }
-
-export default Icon
