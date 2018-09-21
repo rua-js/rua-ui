@@ -21,11 +21,8 @@ export {
 } from './primitives'
 // views
 export {
-  Card,
-  IconText,
   TextView,
   ImageView,
-  Statistic,
   TextInputView,
   Center,
 } from './views'
