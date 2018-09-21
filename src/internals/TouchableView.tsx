@@ -47,6 +47,7 @@ export default class PlatformTouchable extends React.Component<any, any> {
 
     if (TouchableComponent === TouchableNativeFeedback) {
       useForeground =
+        // @ts-ignore
         foreground && TouchableNativeFeedback.canUseNativeForeground();
 
       if (foreground && background) {
