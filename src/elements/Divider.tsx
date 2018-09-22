@@ -7,27 +7,29 @@ class Divider extends React.PureComponent<DividerProps, never>
 
   static defaultProps = {
     color: colors.border,
-    type: 'horizontal',
+    vertical: false,
   }
 
-  computeStyle = () =>
+  computeStyle()
   {
-    const { color, type } = this.props
-    if (type === 'horizontal')
+    const { color, vertical } = this.props
+
+    if (vertical)
     {
       return {
-        borderBottomColor: color,
+        borderRightColor: color,
       }
     }
+
     return {
-      borderRightColor: color,
+      borderBottomColor: color,
     }
   }
 
   render()
   {
-    const { type } = this.props
-    const style = styles[type]
+    const { vertical } = this.props
+    const style = styles[vertical ? 'vertical' : 'horizontal']
     return (
       <View style={[style, this.computeStyle()]}/>
     )
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
 
 export interface DividerProps
 {
-  type?: 'horizontal' | 'vertical'
+  vertical?: boolean
   color?: string
 }
 
