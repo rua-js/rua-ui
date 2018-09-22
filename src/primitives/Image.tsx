@@ -1,10 +1,14 @@
 import * as React from 'react'
-import { Image as RNImage, ImageBackground, ImageProps as RNImageProps, ImageStyle, StyleProp } from 'react-native'
+import { Image as RNImage, ImageBackground, ImageProps as RNImageProps } from 'react-native'
 import { utils } from '../shared'
 
 const { shouldUseTouchable } = utils
-
-export default class Image extends React.PureComponent<ImageProps, any>
+/**
+ * React Native Image that supports touch event, wrap content inside and other enhancement
+ *
+ * @class Image
+ */
+export default class Image extends React.PureComponent<ImageProps, never>
 {
   /**
    * This methods checks if parent elements passed onClick into View
@@ -28,7 +32,6 @@ export default class Image extends React.PureComponent<ImageProps, any>
     return onPress && onPress()
   }
 
-
   render()
   {
     const { children, style, size, ...restProps } = this.props
@@ -38,6 +41,7 @@ export default class Image extends React.PureComponent<ImageProps, any>
     // fix hint error
     const imageStyle: any = {}
 
+    // support 'size' property
     if (size)
     {
       imageStyle.height = size
