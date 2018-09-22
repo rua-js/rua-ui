@@ -1,19 +1,7 @@
-import Text, { TextProps } from './Text'
-import View, { ViewProps } from './View'
-import TextInput, { TextInputProps } from './TextInput'
-import Image, { ImageProps } from './Image'
-import ScrollView, { ScrollViewProps } from './ScrollView'
+export { default as Text, TextProps } from './Text'
+export { default as View, ViewProps } from './View'
+export { default as TextInput, TextInputProps } from './TextInput'
+export { default as Image, ImageProps } from './Image'
+export { default as ScrollView, ScrollViewProps } from './ScrollView'
+export { default as FlatList, FlatListProps } from './FlatList'
 
-export {
-  Text,
-  View,
-  TextInput,
-  Image,
-  ScrollView,
-  // Props
-  TextProps,
-  ViewProps,
-  TextInputProps,
-  ImageProps,
-  ScrollViewProps,
-}
