@@ -10,7 +10,7 @@ export default function Text(props: TextProps)
     size = 14,
     color = '#1b1b1b',
     weight,
-    family,
+    family = 'Helvetica',
     lineHeight,
     ...restProps
   } = props
