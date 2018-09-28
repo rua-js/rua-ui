@@ -10,7 +10,7 @@ export default function Text(props: TextProps)
     size = 14,
     color = '#1b1b1b',
     weight,
-    family = 'Helvetica',
+    family,
     lineHeight,
     ...restProps
   } = props
@@ -20,7 +20,7 @@ export default function Text(props: TextProps)
     lineHeight: lineHeight || size && size * 1.2,
     fontSize: size,
     fontWeight: weight,
-    fontFamily: family,
+    fontFamily: family || 'Helvetica',
   }
 
   return (
