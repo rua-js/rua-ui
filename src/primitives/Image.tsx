@@ -101,4 +101,5 @@ export interface ImageProps extends RNImageProps
   onPressIn?: Function
   onPressOut?: Function
   onClick?: Function
+  style?: any
 }

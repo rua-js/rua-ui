@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ViewStyle } from 'react-native'
+import { StyleProp, ViewStyle } from 'react-native'
 import { View, ViewProps } from '../primitives'
 
 export default function Row(props: RowProps)
@@ -40,6 +40,7 @@ export default function Row(props: RowProps)
   if (evenly) viewStyle.justifyContent = 'space-evenly'
 
   return (
+    // @ts-ignore
     <View style={[viewStyle].concat(style)} {...restProps}>
       {children}
     </View>
@@ -59,5 +60,5 @@ export interface RowProps extends ViewProps
   between?: boolean
   around?: boolean
   evenly?: boolean
-  style?: ViewStyle
+  style?: StyleProp<ViewStyle>
 }

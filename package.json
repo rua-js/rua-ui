@@ -1,12 +1,12 @@
 {
   "name": "@ruax/ui",
-  "version": "0.2.0",
+  "version": "0.3.2",
   "description": "a mobile ui helper",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest test.ts --coverage",
-    "build": "rm -rf ./lib && tsc && post-build",
-    "post-build": "node ./scripts/release/move-dts.js"
+    "build": "rm -rf ./lib && tsc"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ViewStyle } from 'react-native'
+import { StyleProp, ViewStyle } from 'react-native'
 import { View, ViewProps } from '../primitives'
 
 export default function Column(props: ColumnProps)
@@ -41,6 +41,7 @@ export default function Column(props: ColumnProps)
 
   return (
     <View
+      // @ts-ignore
       style={[viewStyle].concat(style)}
       {...restProps}
     >
@@ -62,5 +63,5 @@ export interface ColumnProps extends ViewProps
   between?: boolean
   around?: boolean
   evenly?: boolean
-  style?: ViewStyle
+  style?: StyleProp<ViewStyle>
 }
